@@ -1,25 +1,26 @@
 # Front-End
 ### October 18, 2019
 
-##Front End List To Do
-[x] Front-end react app set up 
+## Front End List To Do
 
-[] Dependencies set up
+- [x] Front-end react app set up 
 
-[x] Yarn/npm set up
+- [] Dependencies set up
 
-[] Components set up
+- [x] Yarn/npm set up
 
-[x] Components 
+- [] Components set up
 
-[x] Images
+- [x] Components 
 
-[] Privaterouters set up
+- [x] Images
 
-[] Authorizations set up
+- [] Privaterouters set up
 
-[] CSS/SCSS/LESS
+- [] Authorizations set up
 
-[] Reducers set up
+- [] CSS/SCSS/LESS
 
-[] Routes 
+- [] Reducers set up
+
+- [] Routes 
