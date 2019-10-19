@@ -5,22 +5,22 @@
 
 - [x] Front-end react app set up 
 
-- [] Dependencies set up
+- [ ] Dependencies set up
 
 - [x] Yarn/npm set up
 
-- [] Components set up
+- [ ] Components set up
 
 - [x] Components 
 
 - [x] Images
 
-- [] Privaterouters set up
+- [ ] Privaterouters set up
 
-- [] Authorizations set up
+- [ ] Authorizations set up
 
-- [] CSS/SCSS/LESS
+- [ ] CSS/SCSS/LESS
 
-- [] Reducers set up
+- [ ] Reducers set up
 
-- [] Routes 
+- [ ] Routes 
