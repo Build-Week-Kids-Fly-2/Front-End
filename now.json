@@ -1,0 +1,8 @@
+{
+    "version": 2,
+    "name": "kidsfly",
+    "builds": [{ "src": "kidsfly/package.json", "use": "@now/static-build", "config": {"distDir": "build"} }],
+    "routes": [
+        { "src": "/(.*)", "dest": "kidsfly/$1" }
+    ]
+}
