@@ -18,7 +18,7 @@ import StaffDashboard from './Components/StaffDashboard';
 import TravelerRegister from './Components/TravelerRegister';
 import TravelerSignIn from './Components/TravelerSignIn';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <Switch>
