@@ -1,6 +1,10 @@
 import React, {useState} from 'react';
 import {axiosWithAuth} from '../utils/AxiosWithAuth';
+import styled from 'styled-components';
 
+const SignInStyle = styled.div `
+
+`
 
 const TravelerSignIn = props => {
     const [credentials, setCredentials] = useState({
@@ -28,7 +32,7 @@ const TravelerSignIn = props => {
     }
 return (
     
-    <div>
+    <SignInStyle>
           <div className="nav-container">
         <header>
           <a href="landing.html"><h2>KidsFly</h2></a>
@@ -61,7 +65,7 @@ return (
                      />
                      <button>Log in</button>
       </form>
-    </div>
+    </SignInStyle>
 )
 }
 export default TravelerSignIn;

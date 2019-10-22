@@ -1,8 +1,12 @@
 import React from 'react';
+import styled from 'styled-components';
 
+const DashboardStyle = styled.div `
+
+`
 const Dashboard = () => {
 return (
-    <div>
+    <DashboardStyle>
          <div className="nav-container">
         <header>
           <a href="landing.html"><h2>KidsFly</h2></a>
@@ -19,7 +23,7 @@ return (
          <div className="foot-container">
     <footer>
       <div className="footCol1">
-        <a href="/">About Us</a>
+        <a href="about.html">About Us</a>
         <a href="/">Our Mission</a>
         <a href="/">Help</a>
         <a href="/stafflogin">Staff Log In</a>
@@ -43,7 +47,7 @@ return (
       </div>
     </footer>
     </div>
-    </div>
+    </DashboardStyle>
 )
 }
 

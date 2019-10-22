@@ -1,5 +1,10 @@
 import React, {useState} from 'react';
 import {axiosWithAuth} from '../utils/AxiosWithAuth';
+import styled from 'styled-components';
+
+const TravelerStyle = styled.div `
+
+`
 
 const TravelerRegister = props => {
     const [signup, setSignup] = useState({
@@ -26,7 +31,7 @@ const TravelerRegister = props => {
             .catch(err => console.log(err));
         }
 return (
-    <div>
+    <TravelerStyle>
               <div className="nav-container">
         <header>
           <a href="landing.html"><h2>KidsFly</h2></a>
@@ -66,7 +71,7 @@ return (
                  />
                  <button>Register</button>
   </form>
-  </div>
+  </TravelerStyle>
 )
 }
 

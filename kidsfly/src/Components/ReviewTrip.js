@@ -1,10 +1,14 @@
 import React from 'react';
+import styled from 'styled-components';
 
+const ReviewStyle = styled.div `
+
+`
 
 const ReviewTrip = props => {
-
+  const trip = props.trips
 return (
-    <div>
+    <ReviewStyle>
     <div className="nav-container">
    <header>
      <a href="landing.html"><h2>KidsFly</h2></a>
@@ -18,10 +22,38 @@ return (
  </nav>
  </header>
  </div>
+
+<div className="main-container">
+  <h2>Review Your Trip</h2>
+  <div className="boxes">
+ <p>{trip.service}</p> 
+ <button>Edit</button>
+</div>
+<div className="boxes">
+<p>{trip.assistant}</p> 
+<button>Edit</button>
+</div>
+<div className="boxes">
+<p>{trip.date}</p>  
+<button>Edit</button>
+</div>
+<div className="boxes">
+<p>{trip.time}</p> 
+<button>Edit</button>
+</div>
+<div className="boxes">
+<p>{trip.passengers}</p>  
+<button>Edit</button>
+</div>
+<div className="boxes">
+<p>{trip.plane}</p> 
+<button>Edit</button>
+</div>
+</div>
     <div className="foot-container">
 <footer>
  <div className="footCol1">
-   <a href="/">About Us</a>
+   <a href="about.html">About Us</a>
    <a href="/">Our Mission</a>
    <a href="/">Help</a>
    <a href="/stafflogin">Staff Log In</a>
@@ -45,7 +77,7 @@ return (
  </div>
 </footer>
 </div>
-</div>
+</ReviewStyle>
 )
 }
 

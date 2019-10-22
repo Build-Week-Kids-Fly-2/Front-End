@@ -1,5 +1,10 @@
 import React, {useState} from 'react';
 import { axiosWithAuth } from '../utils/AxiosWithAuth';
+import styled from 'styled-components';
+
+const AdminSignStyle = styled.div `
+
+`
 
 const AdminSignIn = props => {
     const [credentials, setCredentials] = useState({
@@ -26,7 +31,7 @@ const AdminSignIn = props => {
     }
 return (
     
-    <div>
+    <AdminSignStyle>
           <div className="nav-container">
         <header>
           <a href="landing.html"><h2>KidsFly</h2></a>
@@ -59,7 +64,7 @@ return (
                      />
                      <button>Log in</button>
       </form>
-    </div>
+    </AdminSignStyle>
 )
 }
 

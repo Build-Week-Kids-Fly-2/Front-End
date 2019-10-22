@@ -1,5 +1,10 @@
 import React, {useState} from 'react';
 import {axiosWithAuth} from '../utils/AxiosWithAuth'
+import styled from 'styled-components';
+
+const AdminStyle = styled.div `
+
+`
 
 const AdminRegister = props => {
     const [adminSignup, setAdminSignup] = useState({
@@ -26,13 +31,13 @@ const AdminRegister = props => {
             .catch(err => console.log(err));
         }
 return (
-    <div>
+    <AdminStyle>
         <div className="nav-container">
         <header>
           <a href="landing.html"><h2>KidsFly</h2></a>
       <nav className="left-nav">
         <a href="/travelersignup">Our Mission</a>
-        <a href="about.html">Our Services</a>
+        <a href="/">Our Services</a>
         <a href="/">Help</a>
       </nav>
       <nav className="right-nav">
@@ -43,39 +48,40 @@ return (
       </header>
       </div>
     <form onSubmit={handleRegister}>
-<label>Email: </label>
+
 <input 
                 type="text"
                  name="name"
                  value={adminSignup.name}
+                 placeholder='Email'
                  onChange={handleChange} required
                  />
- <label>Location: </label>
  <input 
                 type="text"
                  name="location"
                  value={adminSignup.location}
+                 placeholder='Location'
                  onChange={handleChange} required
                  />
-<label>Airport Ping: </label>
 <input 
                 type="text"
                  name="airportping"
                  value={adminSignup.airportping}
+                 placeholder='Airport Ping'
                  onChange={handleChange} required
                  />
-<label>Password: </label>
 <input 
                 type="password"
                  name="password"
                  value={adminSignup.password}
+                 placeholder='Password'
                  onChange={handleChange} required
                  />
                  
 
                  <button>Register</button>
   </form>
-  </div>
+  </AdminStyle>
 )
 }
 

@@ -1,9 +1,14 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const FormStyle = styled.div `
+
+`
 
 const KidsFlyForm = () => {
-    
+
 return (
-    <div>
+    <FormStyle>
          <div className="nav-container">
         <header>
           <a href="landing.html"><h2>KidsFly</h2></a>
@@ -17,7 +22,7 @@ return (
       </nav>
       </header>
       </div>
-    </div>
+    </FormStyle>
 )
 }
 

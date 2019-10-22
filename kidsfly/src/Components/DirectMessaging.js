@@ -1,8 +1,13 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const DirectStyle = styled.div `
+
+`
 
 const DirectMessaging = () => {
 return (
-    <div>
+    <DirectStyle>
          <div className="nav-container">
         <header>
           <a href="landing.html"><h2>KidsFly</h2></a>
@@ -43,7 +48,7 @@ return (
       </div>
     </footer>
     </div>
-    </div>
+    </DirectStyle>
 )
 }
 
