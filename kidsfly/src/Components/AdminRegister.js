@@ -1,9 +1,46 @@
 import React, {useState} from 'react';
 import {axiosWithAuth} from '../utils/AxiosWithAuth'
 import styled from 'styled-components';
+import adminsignup from '../img/signup.png'
 
 const AdminStyle = styled.div `
+display: flex;
+h1 {
+  font-size: 4.8rem;
+}
+h2 {
+  margin-bottom: 20%;
+}
 
+form {
+display: flex;
+flex-flow: column;
+width:50%;
+margin: 5%;
+align-items: center;
+
+}
+input {
+border: none;
+border-bottom: 1px solid rgba(196, 196, 196, 0.36);
+color: #293D3D;
+width: 50%;
+margin-bottom: 5%;
+}
+p {
+  font-size: 1.2rem;
+}
+button {
+font-size: 2.4rem;
+width: 564px;
+height: 60px;
+left: 142px;
+top: 756px;
+background: #F5CA8A;
+border-radius: 20px;
+border: none;
+font-weight: bold;
+}
 `
 
 const AdminRegister = props => {
@@ -31,7 +68,7 @@ const AdminRegister = props => {
             .catch(err => console.log(err));
         }
 return (
-    <AdminStyle>
+    <div>
         <div className="nav-container">
         <header>
           <a href="landing.html"><h2>KidsFly</h2></a>
@@ -47,7 +84,12 @@ return (
       </nav>
       </header>
       </div>
+      <AdminStyle>
+      
     <form onSubmit={handleRegister}>
+    <h1>Hello, </h1>
+        <h2>Enter your information below to become 
+        a trusted KidsFly Member </h2>
 
 <input 
                 type="text"
@@ -79,9 +121,11 @@ return (
                  />
                  
 
-                 <button>Register</button>
+                 <button>Sign Up</button>
   </form>
+  <img src={adminsignup} alt="admin sign in"/>
   </AdminStyle>
+  </div>
 )
 }
 
