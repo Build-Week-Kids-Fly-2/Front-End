@@ -15,10 +15,10 @@ const TravelerRegister = props => {
          })
          } //end handlechange
 
-         const handleLogin = e => {
+         const handleRegister = e => {
             e.preventDefault();
             axiosWithAuth()
-            .post('/api/register', signup)
+            .post('/api/users/2', signup)
             .then(res => {
                 localStorage.setItem('token', res.data.payload);
                 props.history.push('/dashboard')
@@ -27,27 +27,42 @@ const TravelerRegister = props => {
         }
 return (
     <div>
-    <form onSubmit={handleLogin}>
-<label>Email:</label>
+              <div className="nav-container">
+        <header>
+          <a href="landing.html"><h2>KidsFly</h2></a>
+      <nav className="left-nav">
+        <a href="/travelersignup">Our Mission</a>
+        <a href="about.html">Our Services</a>
+        <a href="/">Help</a>
+      </nav>
+      <nav className="right-nav">
+        <a href="/adminsignin">Staff Log In</a>
+        <a href="/travelersignin">Sign In</a>
+        <a href="/travelersignup">Sign Up</a>
+      </nav>
+      </header>
+      </div>
+    <form onSubmit={handleRegister}>
 <input 
                 type="email"
                  name="email"
                  value={signup.email}
-                 onChange={handleChange} required
+                 onChange={handleChange} 
+                 placeholder="Email" required
                  />
-                 <label>Name:</label>
 <input 
                 type="text"
                  name="name"
                  value={signup.name}
-                 onChange={handleChange} required
+                 onChange={handleChange} 
+                 placeholder="Name" required
                  />
-                  <label>Password:</label>
 <input 
                 type="password"
                  name="password"
                  value={signup.password}
-                 onChange={handleChange} required
+                 onChange={handleChange} 
+                 placeholder="Password" required
                  />
                  <button>Register</button>
   </form>

@@ -29,20 +29,35 @@ const TravelerSignIn = props => {
 return (
     
     <div>
+          <div className="nav-container">
+        <header>
+          <a href="landing.html"><h2>KidsFly</h2></a>
+      <nav className="left-nav">
+        <a href="/travelersignup">Our Mission</a>
+        <a href="about.html">Our Services</a>
+        <a href="/">Help</a>
+      </nav>
+      <nav className="right-nav">
+        <a href="/adminsignin">Staff Log In</a>
+        <a href="/travelersignin">Sign In</a>
+        <a href="/travelersignup">Sign Up</a>
+      </nav>
+      </header>
+      </div>
         <form onSubmit={handleLogin}>
-    <label>Email:</label>
     <input 
                     type="email"
                      name="email"
                      value={credentials.email}
-                     onChange={handleChange} required
+                     onChange={handleChange} 
+                     placeholder="Email" required
                      />
-                      <label>Password:</label>
    <input 
                     type="password"
                      name="password"
                      value={credentials.password}
-                     onChange={handleChange} required
+                     onChange={handleChange}
+                     placeholder="Password" required
                      />
                      <button>Log in</button>
       </form>

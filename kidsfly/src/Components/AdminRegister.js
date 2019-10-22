@@ -15,10 +15,10 @@ const AdminRegister = props => {
          })
          } //end handlechange
 
-         const handleLogin = e => {
+         const handleRegister = e => {
             e.preventDefault();
             axiosWithAuth()
-            .post('/api/users', adminSignup)
+            .post('/api/users/2', adminSignup)
             .then(res => {
                 localStorage.setItem('token', res.data.payload);
                 props.history.push('/staffdashboard')
@@ -27,28 +27,44 @@ const AdminRegister = props => {
         }
 return (
     <div>
-    <form onSubmit={handleLogin}>
-<label>Email:</label>
+        <div className="nav-container">
+        <header>
+          <a href="landing.html"><h2>KidsFly</h2></a>
+      <nav className="left-nav">
+        <a href="/travelersignup">Our Mission</a>
+        <a href="about.html">Our Services</a>
+        <a href="/">Help</a>
+      </nav>
+      <nav className="right-nav">
+        <a href="/adminsignin">Staff Log In</a>
+        <a href="/travelersignin">Sign In</a>
+        <a href="/travelersignup">Sign Up</a>
+      </nav>
+      </header>
+      </div>
+    <form onSubmit={handleRegister}>
+<label>Email: </label>
 <input 
                 type="text"
                  name="name"
                  value={adminSignup.name}
                  onChange={handleChange} required
                  />
+ <label>Location: </label>
  <input 
                 type="text"
                  name="location"
                  value={adminSignup.location}
                  onChange={handleChange} required
                  />
-                 
+<label>Airport Ping: </label>
 <input 
                 type="text"
                  name="airportping"
                  value={adminSignup.airportping}
                  onChange={handleChange} required
                  />
-                 
+<label>Password: </label>
 <input 
                 type="password"
                  name="password"

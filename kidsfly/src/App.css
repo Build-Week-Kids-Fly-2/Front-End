@@ -1,3 +1,94 @@
 .App {
   text-align: center;
 }
+
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+html,
+body {
+  font-family: 'Lato', sans-serif;
+  color: #293D3D;
+}
+p {
+  font-size: 1.6rem;
+}
+h2 {
+  font-size: 3.6rem;
+}
+h3 {
+  font-size: 3rem;
+}
+h4 {
+  font-size: 2.6rem;
+}
+a {
+  font-size: 1.4rem;
+  color: #293D3D;
+  text-decoration: none;
+}
+label {
+  font-size: 1.4rem;
+}
+.nav-container {
+  background: #033F4C;
+  width: 100%;
+}
+header {
+  display: flex;
+  align-items: center;
+  padding: 24px 0 5px 0;
+  width: 95%;
+  margin: 0 auto;
+}
+header h2,
+header a {
+  color: #FFFFFF;
+}
+.left-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 30%;
+  margin-left: 3%;
+}
+.right-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 70%;
+}
+.right-nav a {
+  margin-left: 5%;
+}
+.foot-container {
+  width: 100%;
+}
+footer {
+  display: flex;
+  background: rgba(196, 196, 196, 0.36);
+  padding: 4% 5%;
+}
+.footCol1 {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+}
+.footCol2 {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+}
+.footCol3 {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+}
+.footCol4 {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+}

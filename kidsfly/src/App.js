@@ -25,8 +25,8 @@ function App() {
      <Route path= "/travelersignin" component= {TravelerSignIn}/>
      <Route path= "/adminsignin" component= {AdminSignIn}/>
      <Route path= "/adminregister" component= {AdminRegister}/>
-     <Route path= "/travelersregister" component= {TravelerRegister}/>
-     <Route path= "/bookingform" component= {KidsFlyForm}/>
+     <Route path= "/travelersignup" component= {TravelerRegister}/>
+     <PrivateRouter path= "/bookingform" component= {KidsFlyForm}/>
      <PrivateRouter path= "/booking" component= {BookingAssistant}/>
      <PrivateRouter path= "/dashboard" component= {Dashboard}/>
      <PrivateRouter path= "/messages" component= {DirectMessaging}/>
