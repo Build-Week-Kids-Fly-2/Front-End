@@ -1,14 +1,110 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import baby from '../img/family1.png'
+import kid from '../img/family2.png'
 const ReviewStyle = styled.div `
-
+padding: 5%;
+  .top-box {
+    background: #5CA2A9;
+    border-radius: 10px;
+    margin-top: 5%;
+    padding: 4% 0 4% 5%;
+  }
+  .top-box h2 {
+    margin: 3% 0;
+    color: white;
+  }
+  .top-box h3 {
+    margin: 2% 0;
+    color: white;
+  }
+  .top-box p {
+    color: white;
+  }
+  .bottom-box {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    background: #FFFFFF;
+    border-radius: 10px;
+    padding: 5%;
+  }
+  .bottom-box p {
+    margin: 5%;
+  }
+  .left-middle-box {
+    width: 35%;
+    padding: 0 3%;
+  }
+  .left-middle-box button {
+    width: 100%;
+    background: #F5CA8A;
+    padding: 4% 0;
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .left-middle-box button:hover {
+    background: #F9DFB9;
+  }
+  .left-middle-box .inner-icon {
+    margin: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .left-middle-box .first-icon {
+    margin-top: 10%;
+  }
+  .right-middle-box {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .right-middle-box img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+  .right-middle-box h3 {
+    text-align: center;
+    padding: 10% 0 0 10%;
+    font-weight: 600;
+  }
+  .whos_going {
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10% 0 0 15%;
+  }
+   .whos_going .p1,
+ .whos_going .p2,
+ .whos_going .p3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+ .whos_going .p1:hover img,
+ .whos_going .p2:hover img,
+ .whos_going .p3:hover img {
+  width: 80px;
+  height: 80px;
+}
 `
 
 const ReviewTrip = props => {
-  const trip = props.trips
+  // const trip = props.trips
 return (
-    <ReviewStyle>
+  <div>
+    <div className ="home-page-content">
     <div className="nav-container">
    <header>
      <a href="/"><h2>KidsFly</h2></a>
@@ -22,34 +118,69 @@ return (
  </nav>
  </header>
  </div>
+<ReviewStyle className="main-container">
+      <div className="top-box">
+        <h2>Review Your Trip</h2>
+        <h3>New York</h3>
+        <p>3 February, 2020</p>
+      </div>
+      <div className="bottom-box">
+        <div className="left-middle-box">
+          <div className="inner-icon first-icon">
+            <i className="fas fa-check-square fa-3x"></i>
+            <p>SFO T3 Door 5</p>
+            <button>Edit</button>
+          </div>
+          <div className="inner-icon">
+            <i className="fas fa-user fa-3x"></i>
+            <p>Jake Herman</p>
+            <button>Edit</button>
+          </div>
+          <div className="inner-icon">
+            <i className="far fa-calendar-alt fa-3x"></i>
+            <p>3 February, 2020</p>
+            <button>Edit</button>
+          </div>
+          <div className="inner-icon">
+            <i className="far fa-clock fa-3x"></i>
+            <p>11:00 AM Arrival</p>
+            <button>Edit</button>
+          </div>
+          <div className="inner-icon">
+            <i className="fas fa-users fa-3x"></i>
+            <p>3 Passengers</p>
+            <button>Edit</button>
+          </div>
+          <div className="inner-icon">
+            <i className="fas fa-plane fa-3x"></i>
+            <p>AKL 9</p>
+            <button>Edit</button>
+          </div>
+          <button>Confirm</button>
+          </div>
+          <div className="right-middle-box">
+<h3>Who is joining your trip?</h3>
+          <div className="whos_going">
+            <div className="p1">
+              <img src={baby} alt="baby in a circle"/>
+              <p>A. Cooper</p>
+            </div>
+            <div className="p2">
+              <img src={kid} alt="small child in a circle"/>
+              <p>N. Cooper</p>
+            </div>
+            <div className="p3">
+              <i class="fas fa-plus-circle fa-4x"></i>
+              <p>Add member</p>
+              </div>
+                </div>
+</div>
 
-<div className="main-container">
-  <h2>Review Your Trip</h2>
-  <div className="boxes">
- <p>{trip.service}</p> 
- <button>Edit</button>
 </div>
-<div className="boxes">
-<p>{trip.assistant}</p> 
-<button>Edit</button>
-</div>
-<div className="boxes">
-<p>{trip.date}</p>  
-<button>Edit</button>
-</div>
-<div className="boxes">
-<p>{trip.time}</p> 
-<button>Edit</button>
-</div>
-<div className="boxes">
-<p>{trip.passengers}</p>  
-<button>Edit</button>
-</div>
-<div className="boxes">
-<p>{trip.plane}</p> 
-<button>Edit</button>
-</div>
-</div>
+
+
+            </ReviewStyle>
+            </div>
     <div className="foot-container">
 <footer>
  <div className="footCol1">
@@ -77,7 +208,7 @@ return (
  </div>
 </footer>
 </div>
-</ReviewStyle>
+</div>
 )
 }
 

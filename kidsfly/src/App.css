@@ -201,3 +201,12 @@ footer {
   text-align: center;
   padding: 2%;
 }
+
+/* Homepage */
+  .home-page-content {
+    background-image: url(./img/mountain-bg.png);
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+  }
