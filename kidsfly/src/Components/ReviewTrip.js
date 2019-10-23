@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
+import booking from '../booking'
 import baby from '../img/family1.png'
-import kid from '../img/family2.png'
+import kid from '../img/family3.png'
 const ReviewStyle = styled.div `
 padding: 5%;
   .top-box {
@@ -98,10 +99,20 @@ padding: 5%;
   width: 80px;
   height: 80px;
 }
+.add {
+  background: white;
+  border: none;
+}
 `
 
 const ReviewTrip = props => {
   // const trip = props.trips
+  const [trip] = useState(...booking);
+
+  const handleEdit = e => {
+    e.PreventDefault();
+    props.history.push('/editform')
+  }
 return (
   <div>
     <div className ="home-page-content">
@@ -121,56 +132,56 @@ return (
 <ReviewStyle className="main-container">
       <div className="top-box">
         <h2>Review Your Trip</h2>
-        <h3>New York</h3>
+        <h3>{trip.location}</h3>
         <p>3 February, 2020</p>
       </div>
       <div className="bottom-box">
         <div className="left-middle-box">
           <div className="inner-icon first-icon">
             <i className="fas fa-check-square fa-3x"></i>
-            <p>SFO T3 Door 5</p>
+            <p>{trip.door}</p>
             <button>Edit</button>
           </div>
           <div className="inner-icon">
             <i className="fas fa-user fa-3x"></i>
-            <p>Jake Herman</p>
+            <p>{trip.assistant}</p>
             <button>Edit</button>
           </div>
           <div className="inner-icon">
             <i className="far fa-calendar-alt fa-3x"></i>
-            <p>3 February, 2020</p>
+            <p>{trip.date}</p>
             <button>Edit</button>
           </div>
           <div className="inner-icon">
             <i className="far fa-clock fa-3x"></i>
-            <p>11:00 AM Arrival</p>
+            <p>{trip.time} Arrival</p>
             <button>Edit</button>
           </div>
           <div className="inner-icon">
             <i className="fas fa-users fa-3x"></i>
-            <p>3 Passengers</p>
+            <p>{trip.passengers} Passengers</p>
             <button>Edit</button>
           </div>
           <div className="inner-icon">
             <i className="fas fa-plane fa-3x"></i>
-            <p>AKL 9</p>
+            <p>{trip.airplane}</p>
             <button>Edit</button>
           </div>
-          <button>Confirm</button>
+          <a href="/dashboard"><button>Confirm</button></a>
           </div>
           <div className="right-middle-box">
 <h3>Who is joining your trip?</h3>
           <div className="whos_going">
             <div className="p1">
               <img src={baby} alt="baby in a circle"/>
-              <p>A. Cooper</p>
+              <p>{trip.family.name[0]}</p>
             </div>
             <div className="p2">
               <img src={kid} alt="small child in a circle"/>
-              <p>N. Cooper</p>
+              <p>{trip.family.name[1]}</p>
             </div>
             <div className="p3">
-              <i class="fas fa-plus-circle fa-4x"></i>
+              <a className="add" href= "/addfamilymember"><i class="fas fa-plus-circle fa-4x"></i></a>
               <p>Add member</p>
               </div>
                 </div>

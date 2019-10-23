@@ -1,7 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
+import {family} from '../data'
 
 const FamilyCard = props => {
-    const famCard = props.familyMembers;
+    const [famCard] = useState(...family)
+    // const famCard = props.familyMembers;
 return (
     <div className="card">
         <image src={famCard.image} alt="family member"/>

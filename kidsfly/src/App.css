@@ -210,3 +210,11 @@ footer {
     height: 100%;
     width: 100%;
   }
+
+  /* Booking Form */
+.booking {
+background-image: url(./img/booking.png);
+background-size: cover;
+height: 1000px;
+width: 100%;
+}
