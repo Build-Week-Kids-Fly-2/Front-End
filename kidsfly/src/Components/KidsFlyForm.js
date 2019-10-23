@@ -11,7 +11,7 @@ return (
     <FormStyle>
          <div className="nav-container">
         <header>
-          <a href="landing.html"><h2>KidsFly</h2></a>
+          <a href="/"><h2>KidsFly</h2></a>
       <nav className="left-nav">
         <a href="/dashboard">Account</a>
         <a href="/bookingform">Plan Trip</a>

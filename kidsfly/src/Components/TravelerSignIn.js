@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
 import {axiosWithAuth} from '../utils/AxiosWithAuth';
+// import axios from 'axios';
 import styled from 'styled-components';
 import adminsignin from '../img/signin.png';
 
 import facebook from '../img/facebook.png';
 import google from '../img/google.png';
+
 
 const SignInStyle = styled.div `
 display: flex;
@@ -101,9 +103,8 @@ const TravelerSignIn = props => {
     const handleLogin = e => {
         e.preventDefault();
         axiosWithAuth()
-        .post('/api/users/3', credentials)
+        .post('/api/auth/login', credentials)
         .then(res => {
-            console.log('/api/users/3');
             localStorage.setItem('token', res.data.payload);
             props.history.push('/dashboard')
         })
@@ -114,9 +115,9 @@ return (
     <div>
           <div className="nav-container">
         <header>
-          <a href="landing.html"><h2>KidsFly</h2></a>
+          <a href="/"><h2>KidsFly</h2></a>
       <nav className="left-nav">
-        <a href="/travelersignup">Our Mission</a>
+        <a href="/">Our Mission</a>
         <a href="about.html">Our Services</a>
         <a href="/">Help</a>
       </nav>

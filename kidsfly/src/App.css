@@ -94,3 +94,110 @@ footer {
   display: flex;
   flex-direction: column;
 }
+
+/* Main */
+.landing-page .main-content {
+  background-image: url(./img/landing-page-bg.png);
+  background-color: #E0EAEB;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+}
+.landing-page .main-content {
+  justify-content: center;
+  align-content: center;
+}
+.landing-page .text {
+  justify-content: center;
+  align-content: center;
+  background-color: #ffffff;
+  width: 341px;
+  padding: 2% 2%;
+}
+.landing-page .text #find {
+  border-bottom: 1px solid black;
+  margin: 0 10%;
+  color: rgba(0, 0, 0, 0.5);
+}
+.landing-page button {
+  background-color: #F9DFB9;
+  width: 280px;
+  height: 60px;
+  border-radius: 10px;
+  border: none;
+  margin: 10% 5%;
+}
+.landing-page .icons {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: #ffffff;
+  height: 120px;
+  font-size: 3rem;
+  width: 950px;
+}
+.landing-page .icons .icon-text {
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  padding: 2%;
+}
+.main-content {
+  display: flex;
+  padding-top: 4%;
+  background-image: url(./img/landing-page-bg.png);
+  background-color: #E0EAEB;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.main-content .text {
+  width: 30%;
+  margin-left: 2%;
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+.main-content .text #create {
+  padding: 10% 25% 0 10%;
+  line-height: 4rem;
+}
+.main-content .text #create h2 {
+  padding-bottom: 2rem;
+}
+.main-content .text #create p {
+  line-height: 2rem;
+}
+.main-content .text #create #find {
+  border-bottom: 1px solid black;
+  color: rgba(0, 0, 0, 0.5);
+  padding-top: 20%;
+}
+.main-content .text button {
+  background-color: #F9DFB9;
+  width: 250px;
+  height: 60px;
+  border-radius: 10px;
+  border: none;
+  margin: 25% 5%;
+}
+.main-content .icons {
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+  width: 100%;
+  margin-right: 7%;
+  padding-right: 5%;
+  padding-top: 1%;
+  background-color: #ffffff;
+  height: 120px;
+  font-size: 2.5rem;
+}
+.main-content .icons .icon-text {
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  padding: 2%;
+}

@@ -14,11 +14,27 @@ display: flex;
 flex-flow: column;
 
 .col-1 {
-    display: flex;
-    padding: 5%;
+display: flex;
+padding: 5%;
+ width: 1255px;
+height: 127px;
+margin: 5%;
+background: #E0EAEB;
+border-radius: 10px;
 }
 .card {
+display: flex;
+flex-flow: column;
+align-items: center;
+text-align:center;
 margin-left: 0%;
+width: 442px;
+height: 376px;
+left: 138px;
+top: 393px;
+background: #FFFFFF;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 20px;
 }
 .col-2 {
     display: flex;
@@ -30,17 +46,28 @@ margin-left: 0%;
 form {
     text-align: left;
     margin-left: 30%;
+    align-items: center;
+    justify-content: center;
 }
-
+input {
+  width: 269px;
+  height: 44px;
+}
 .family-form {
     display: flex;
     flex-flow: column;
-    width: 100%;
     margin-bottom: 15%;
 }
 
 button {
     margin-bottom: 10%;
+    width: 159px;
+    height: 32px;
+    background: #F5CA8A;
+    border-radius: 10px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-left: 20%;
 }
 `
 
@@ -75,7 +102,7 @@ return (
     <div>
           <div className="nav-container">
         <header>
-          <a href="landing.html"><h2>KidsFly</h2></a>
+          <a href="/"><h2>KidsFly</h2></a>
       <nav className="left-nav">
         <a href="/dashboard">Account</a>
         <a href="/booking">Plan Trip</a>
@@ -94,26 +121,26 @@ return (
         <FamilyCard key={familyMembers.id} familyMembers={familyMembers}/>
         <form onSubmit={handleSubmit}>
             <div className="family-form">
-        <label>First Name: </label>
-        <input type="text" name="firstname" onChange= {handleChanges}/>
+        <label>First Name </label>
+        <input className="name" type="text" name="firstname" onChange= {handleChanges}/>
         </div>
         <div className="family-form">
-        <label>Last Name: </label>
-        <input type="text" name="lastname" onChange= {handleChanges}/>
+        <label>Last Name </label>
+        <input className="name" type="text" name="lastname" onChange= {handleChanges}/>
         </div>
         <div className="family-form">
-        <label>Age: </label>
+        <label>Age </label>
         <input type="number" name="age" onChange= {handleChanges}/>
         </div>
         <div className="family-form">
-        <label>Relationship: </label>
+        <label>Relationship </label>
         <input type="text" name="relationship" onChange= {handleChanges}/>
         </div>
         <div className="family-form">
-        <label>Phone Number (Optional): </label>
+        <label>Phone Number (Optional) </label>
         <input type="phone" name="phone" onChange= {handleChanges}/>
         </div>
-        <button>Add family member</button>
+        <button>Done</button>
         </form>
         </div>
         </FamilyStyle>

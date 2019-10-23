@@ -48,7 +48,7 @@ font-weight: bold;
 
 const AdminSignIn = props => {
     const [credentials, setCredentials] = useState({
-        airportping: '',
+        email: '',
         password: ''
     })
 
@@ -62,7 +62,7 @@ const AdminSignIn = props => {
     const handleLogin = e => {
         e.preventDefault();
         axiosWithAuth()
-        .post('/api/users/2', credentials)
+        .post('/api/auth/admin/login', credentials)
         .then(res => {
             localStorage.setItem('token', res.data.payload);
             props.history.push('/staffdashboard')
@@ -74,7 +74,7 @@ return (
    <div>
           <div className="nav-container">
         <header>
-          <a href="landing.html"><h2>KidsFly</h2></a>
+          <a href="/"><h2>KidsFly</h2></a>
       <nav className="left-nav">
         <a href="/travelersignup">Our Mission</a>
         <a href="about.html">Our Services</a>
@@ -94,10 +94,10 @@ return (
         with KidsFly </h2>
     <input 
                     type="text"
-                     name="airportping"
-                     value={credentials.airportping}
+                     name="email"
+                     value={credentials.email}
                      onChange={handleChange} 
-                     placeholder="Airport Ping" required
+                     placeholder="Email" required
                      />
    <input 
                     type="password"

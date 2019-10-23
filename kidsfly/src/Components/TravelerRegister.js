@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {axiosWithAuth} from '../utils/AxiosWithAuth';
+// import axios from 'axios';
 import styled from 'styled-components';
 
 import adminsignup from '../img/signup.png';
@@ -87,8 +88,11 @@ margin: 3%;
 const TravelerRegister = props => {
     const [signup, setSignup] = useState({
         email: '',
-        name: '',
-        password: ''
+        password: '',
+        fullName: '',
+        address: '',
+        phone: '',
+        localAirport: ''
     })
 
     const handleChange = e => {
@@ -101,7 +105,7 @@ const TravelerRegister = props => {
          const handleRegister = e => {
             e.preventDefault();
             axiosWithAuth()
-            .post('/api/users/2', signup)
+            .post('/api/auth/register', signup)
             .then(res => {
                 localStorage.setItem('token', res.data.payload);
                 props.history.push('/dashboard')
@@ -112,7 +116,7 @@ return (
     <div>
               <div className="nav-container">
         <header>
-          <a href="landing.html"><h2>KidsFly</h2></a>
+          <a href="/"><h2>KidsFly</h2></a>
       <nav className="left-nav">
         <a href="/travelersignup">Our Mission</a>
         <a href="about.html">Our Services</a>
@@ -129,26 +133,47 @@ return (
     <form onSubmit={handleRegister}>
     <h1>Hello, </h1>
         <h2>Enter your information below to sign up with email or social media account </h2>
-<input 
+                  <input 
                 type="email"
                  name="email"
                  value={signup.email}
                  onChange={handleChange} 
                  placeholder="Email" required
                  />
-<input 
-                type="text"
-                 name="name"
-                 value={signup.name}
-                 onChange={handleChange} 
-                 placeholder="Name" required
-                 />
-<input 
+                  <input 
                 type="password"
                  name="password"
                  value={signup.password}
                  onChange={handleChange} 
                  placeholder="Password" required
+                 />
+                   <input 
+                type="text"
+                 name="fullName"
+                 value={signup.fullName}
+                 onChange={handleChange} 
+                 placeholder="Full name" required
+                 />
+                  <input 
+                type="address"
+                 name="address"
+                 value={signup.address}
+                 onChange={handleChange} 
+                 placeholder="Address" required
+                 />
+                 <input 
+                type="phone"
+                 name="phone"
+                 value={signup.phone}
+                 onChange={handleChange} 
+                 placeholder="Phone" required
+                 />
+                 <input 
+                type="text"
+                 name="localAirport"
+                 value={signup.localAirport}
+                 onChange={handleChange} 
+                 placeholder="Local Airport" required
                  />
                  <label for="cb" class="pure-checkbox">
                                 <input id="cb" type="checkbox"/>

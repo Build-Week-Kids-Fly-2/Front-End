@@ -16,6 +16,7 @@ const FamilyPassport = props => {
 return (
     <PassportStyle>
     <div className="text">
+        <img src={fam.image} alt="family member"/>
         <p>{fam.first_name}</p>
         <p>{fam.last_name}</p>
     </div>
