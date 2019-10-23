@@ -10,7 +10,7 @@ return (
     <StaffStyle>
          <div className="nav-container">
         <header>
-          <a href="landing.html"><h2>KidsFly</h2></a>
+          <a href="/"><h2>KidsFly</h2></a>
       <nav className="left-nav">
       </nav>
       <nav className="right-nav">
