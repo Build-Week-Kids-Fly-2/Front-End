@@ -37,7 +37,7 @@ function App() {
      <PrivateRouter path= "/staffdashboard" component= {StaffDashboard}/>
     </Switch>
     {/* <AdminRegister /> */}
-    <BookingAssistant />
+    <Dashboard />
     </div>
   );
 }
