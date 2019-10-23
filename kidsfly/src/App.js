@@ -36,7 +36,8 @@ function App() {
      <PrivateRouter path= "/reviewtrip" component= {ReviewTrip}/>
      <PrivateRouter path= "/staffdashboard" component= {StaffDashboard}/>
     </Switch>
-
+    {/* <AdminRegister /> */}
+    <BookingAssistant />
     </div>
   );
 }
