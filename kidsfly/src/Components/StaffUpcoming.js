@@ -18,17 +18,29 @@ const StaffUpcomingStyle =styled.div`
 }
 
 .title{
-padding-left:60px;  
-width: 244px;
-height: 44px;
+    padding-left:60px;  
+    width: 244px;
+    height: 44px;
+    // margin: 10px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    color: #293D3D;
+}
 
-font-family: Lato;
-font-style: normal;
-font-weight: bold;
-font-size: 18px;
-line-height: 22px;
-
-color: #293D3D;
+.title2{
+    padding-left:60px;  
+    width: 244px;
+    height: 44px;
+    margin: 10px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    color: #293D3D;
 }
 
 .date{
@@ -44,16 +56,14 @@ color: #293D3D;
     flex-direction: column;
 }
 
-.staffpic{
-    padding:0px;
-}
-
 .pic{
     display: flex;
     flex-wrap: wrap;
-    padding: 20px;
+    padding: 20px 45px;
 }
-
+ .staffpic{
+     padding: 10px;
+ }
 label{
     margin-left: 10px;
     text-align:left;
@@ -101,6 +111,49 @@ label{
     box-sizing: border-box;
     width: 832px;
     height: 237px;
+    margin-bottom:40px;
+p{
+    // padding-left: 30px;
+    margin: 10px;
+    text-align: left;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+}
+.times{
+    display: flex;
+    flex-direction: column;
+    
+}
+.pending{
+    color: #C4C4C4;
+}
+
+.here{
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    width: 125px;
+    height: 49px;
+    background: #E0EAEB;
+    border-radius: 10px;
+    padding-left: 18px;
+    padding-top: 10px;
+    margin-top: 50px;
+}
+
+.staff{
+    margin-left: 250px;
+    margin-top: 50px;
+}
+
+.staff2{
+    margin-left: 330px;
+    margin-top: 50px;
 }
 `
 
@@ -128,7 +181,7 @@ const StaffUpcoming = () => {
                 <h4 className="title">Auckland International Airport
                      (AKL) </h4>
                 <hr></hr>
-                <h4 className="title">Staff on Duty </h4>
+                <h4 className="title2">Staff on Duty </h4>
                 <div className="pic">
                     <div className="staffpic">
                         <img src={Jason} alt="Jason" />
@@ -186,7 +239,44 @@ const StaffUpcoming = () => {
                 </div>
                 <h4 className="date">Saturday, 19 October 2019 </h4>
                 <div className="staffarrive">
-                    <p>Arrival Time </p> <p>10:30  am </p>
+                    <div className="times">
+                        <p>Arrival Time</p>
+                        <p>Group</p>
+                        <p>Location </p>
+                        <p>Flight Number</p>
+                        <p>Status</p>
+                    </div>
+                    <div className="times">
+                        <p>10:30  am </p>
+                        <p>Mikelsen-Cooper Family</p>
+                        <p>Arrivals Gate 3 </p>
+                        <p>AL898 </p>
+                        <p className="pending">Pending </p>
+                    </div>
+                    <div className="staff">
+                        <img src={Dani} alt="Dani"/>
+                        <p className="here">I Am Here</p>
+                    </div>
+                </div>
+                <div className="staffarrive">
+                    <div className="times">
+                        <p>Arrival Time</p>
+                        <p>Group</p>
+                        <p>Location </p>
+                        <p>Flight Number</p>
+                        <p>Status</p>
+                    </div>
+                    <div className="times">
+                        <p>11:30  am </p>
+                        <p>Tonkins Family</p>
+                        <p>Arrivals Gate 9 </p>
+                        <p>GL8938 </p>
+                        <p className="pending">Pending </p>
+                    </div>
+                    <div className="staff2">
+                        <img src={Jason} alt="Jason"/>
+                        <p className="here">I Am Here</p>
+                    </div>
                 </div>
             </section>
     </div>
