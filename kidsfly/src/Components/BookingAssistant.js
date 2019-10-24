@@ -5,7 +5,6 @@ import asst2 from "../img/assistant2.png"
 import asst3 from "../img/assistant3.png"
 
 
-
 const BookStyle = styled.div `
   .fas{
     color: gold;
@@ -105,6 +104,15 @@ const BookStyle = styled.div `
     box-sizing: border-box;
     border-radius: 5px;
    }
+   .subbtn{
+    background: #F5CA8A;
+    border-radius: 10px;
+    padding: 10px 70px;
+   }
+   .substy{
+     padding-top: 20px;
+   }
+`
 
 const BookingAssistant = () => {
   return (
@@ -133,7 +141,8 @@ const BookingAssistant = () => {
               <input
                 type="text"
                 name="languages"
-
+                placeholder='Languages'
+              
               />
             </div>
             <div className="filform">
@@ -141,6 +150,7 @@ const BookingAssistant = () => {
               <input
                 type="text"
                 name="experience"
+                placeholder='Experience'
               />
             </div>
             <div className="filform">
@@ -148,17 +158,20 @@ const BookingAssistant = () => {
               <input
                 type="text"
                 name="rating"
+                placeholder='Rating'
               />
             </div>
             <div className="filform">
               <label>Gender</label><input
                 type="text"
                 name="gender"
+                placeholder='Gender'
               />
             </div>
             <div className="filform">
               <label>Date Available</label><input
                 type="text"
+                placeholder='Date Available'
               />
             </div>
 
@@ -182,10 +195,7 @@ const BookingAssistant = () => {
         with children<br></br>
                 Knows Spanish and English </p>
             </div>
-
             <div><button className="btn1 btn"><a href="/reviewtrip">Book</a></button></div>
-            <div><button className="btn1 btn">Book</button></div>
-
             
           </div>
      
@@ -206,10 +216,7 @@ const BookingAssistant = () => {
                 Knows English
               </p>
             </div>
-
             <div><button className="btn2 btn"><a href="/reviewtrip">Book</a></button></div>
-            <div><button className="btn2 btn">Book</button></div>
-
           </div>
 
           <div className="assistants">
@@ -230,7 +237,6 @@ const BookingAssistant = () => {
         </p>
             </div>
             <div><button className="btn3 btn"><a href="/reviewtrip">Book</a></button></div>
-            <div><button className="btn3 btn">Book</button></div>
           </div>
         </div>
       </div>
@@ -264,7 +270,6 @@ const BookingAssistant = () => {
             </div>
         </BookStyle>
         </div>
-
   )
   }
 export default BookingAssistant; 
