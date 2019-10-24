@@ -1,5 +1,5 @@
 
-export default [
+export const booking = [
 {
     id:1,
     location:"Auckland",

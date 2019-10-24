@@ -49,7 +49,6 @@ const BookStyle = styled.div `
     left: 70%;
     top: 32%;   
   }
-
   .btn2{
     position: absolute;
     left: 70%;
@@ -65,11 +64,9 @@ const BookStyle = styled.div `
     background: #F5CA8A;
     border-radius: 10px;
   }
-
    .asstcontent{
     margin-left: 3%;
   }
-
   .assts{
     padding-top: 30px;
     padding-bottom: 30px;
@@ -81,11 +78,9 @@ const BookStyle = styled.div `
     margin-top: 10px;
     margin-bottom: 10px;
   }
-
   h3 {
     padding-left: 100px;
   }
-
   .filform{
     display: flex;
     flex-direction: column;
@@ -102,7 +97,6 @@ const BookStyle = styled.div `
      padding-top: 30px;
      font-size: 2rem;
    }
-
    input{
     padding: 10px;
     background: #FFFFFF;
@@ -110,13 +104,11 @@ const BookStyle = styled.div `
     box-sizing: border-box;
     border-radius: 5px;
    }
-
    .subbtn{
     background: #F5CA8A;
     border-radius: 10px;
     padding: 10px 70px;
    }
-
    .substy{
      padding-top: 20px;
    }
@@ -149,9 +141,8 @@ const BookingAssistant = () => {
               <input
                 type="text"
                 name="languages"
-                //  value={adminSignup.name}
                 placeholder='Languages'
-              //  onChange={handleChange} required
+              
               />
             </div>
             <div className="filform">
@@ -159,9 +150,7 @@ const BookingAssistant = () => {
               <input
                 type="text"
                 name="experience"
-                //  value={adminSignup.location}
                 placeholder='Experience'
-              //  onChange={handleChange} required
               />
             </div>
             <div className="filform">
@@ -169,27 +158,20 @@ const BookingAssistant = () => {
               <input
                 type="text"
                 name="rating"
-                //  value={adminSignup.airportping}
                 placeholder='Rating'
-              //  onChange={handleChange} required
               />
             </div>
             <div className="filform">
               <label>Gender</label><input
                 type="text"
                 name="gender"
-                //  value={adminSignup.password}
                 placeholder='Gender'
-              //  onChange={handleChange} required
               />
             </div>
             <div className="filform">
               <label>Date Available</label><input
                 type="text"
-                name="date available"
-                //  value={adminSignup.password}
                 placeholder='Date Available'
-              //  onChange={handleChange} required
               />
             </div>
 
@@ -213,7 +195,7 @@ const BookingAssistant = () => {
         with children<br></br>
                 Knows Spanish and English </p>
             </div>
-            <div><button className="btn1 btn">Book</button></div>
+            <div><button className="btn1 btn"><a href="/reviewtrip">Book</a></button></div>
             
           </div>
      
@@ -234,7 +216,7 @@ const BookingAssistant = () => {
                 Knows English
               </p>
             </div>
-            <div><button className="btn2 btn">Book</button></div>
+            <div><button className="btn2 btn"><a href="/reviewtrip">Book</a></button></div>
           </div>
 
           <div className="assistants">
@@ -254,7 +236,7 @@ const BookingAssistant = () => {
                 Knows Japanese and English
         </p>
             </div>
-            <div><button className="btn3 btn">Book</button></div>
+            <div><button className="btn3 btn"><a href="/reviewtrip">Book</a></button></div>
           </div>
         </div>
       </div>
@@ -288,7 +270,6 @@ const BookingAssistant = () => {
             </div>
         </BookStyle>
         </div>
-)
-}
-
-export default BookingAssistant;
+  )
+  }
+export default BookingAssistant; 

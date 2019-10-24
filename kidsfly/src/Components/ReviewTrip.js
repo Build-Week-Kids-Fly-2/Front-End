@@ -1,8 +1,9 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import styled from 'styled-components';
-import booking from '../booking'
 import baby from '../img/family1.png'
 import kid from '../img/family3.png'
+import { TripContext } from '../Contexts/TripContext';
+
 const ReviewStyle = styled.div `
 padding: 5%;
   .top-box {
@@ -48,6 +49,9 @@ padding: 5%;
     font-size: 1.8rem;
     font-weight: 600;
     cursor: pointer;
+  }
+  a {
+    font-size: 1.8rem;
   }
   .left-middle-box button:hover {
     background: #F9DFB9;
@@ -105,13 +109,13 @@ padding: 5%;
 }
 `
 
-const ReviewTrip = ({...trips}, props) => {
-  const [trip] = useState(...booking);
+const ReviewTrip = () => {
+  const trips = useContext(TripContext)
 
   const handleEdit = e => {
     e.PreventDefault();
-    props.history.push('/editform')
-  }
+      }
+  
 return (
   <div>
     <div className ="home-page-content">
@@ -131,40 +135,46 @@ return (
 <ReviewStyle className="main-container">
       <div className="top-box">
         <h2>Review Your Trip</h2>
-        <h3>{trips.airport}</h3>
-        <p>{trips.departureTime}</p>
+        <h3>Alaska</h3>
+        <p>{trips.flightNumber}</p>
+        <p>{trips.airline}</p>
       </div>
       <div className="bottom-box">
         <div className="left-middle-box">
           <div className="inner-icon first-icon">
-            <i className="fas fa-check-square fa-3x"></i>
-            {/* <p>{trip.door}</p> */}
-            <button>Edit</button>
+            <i className="fas fa-shopping-bag fa-3x"></i>
+            <p>{trips.carryOnBags} carry-on bags</p>
+            <button onSubmit= {handleEdit}>Edit</button>
           </div>
           <div className="inner-icon">
-            <i className="fas fa-user fa-3x"></i>
-            {/* <p>{trip.assistant}</p> */}
-            <button>Edit</button>
+            <i className="fas fa-luggage-cart fa-3x"></i>
+            <p>{trips.checkedBags} checked bags</p>
+            <button onSubmit= {handleEdit}><a href="/booking">Edit</a></button>
           </div>
           <div className="inner-icon">
-            <i className="far fa-calendar-alt fa-3x"></i>
-            {/* <p>{trip.date}</p> */}
-            <button>Edit</button>
+            <i className="far fa-check-square fa-3x"></i>
+            <p>{trips.arrived} arrived </p>
+            <button onSubmit= {handleEdit}>Edit</button>
           </div>
           <div className="inner-icon">
             <i className="far fa-clock fa-3x"></i>
-            {/* <p>{trip.time} Arrival</p> */}
-            <button>Edit</button>
+            <p>{trips.departureTime} Arrival</p>
+            <button onSubmit= {handleEdit}>Edit</button>
+          </div>
+          <div className="inner-icon">
+            <i className="fas fa-user fa-3x"></i>
+            <p>Jake Hermen</p>
+            <button onSubmit= {handleEdit}><a href="/booking">Edit</a></button>
           </div>
           <div className="inner-icon">
             <i className="fas fa-users fa-3x"></i>
-            {/* <p>{trip.passengers} Passengers</p> */}
-            <button>Edit</button>
+            <p>{trips.children} Children</p>
+            <button onSubmit= {handleEdit}>Edit</button>
           </div>
           <div className="inner-icon">
             <i className="fas fa-plane fa-3x"></i>
-            {/* <p>{trip.airplane}</p> */}
-            <button>Edit</button>
+            <p>{trips.en_route} en-route </p>
+            <button onSubmit= {handleEdit}>Edit</button>
           </div>
           <a href="/dashboard"><button>Confirm</button></a>
           </div>
@@ -173,11 +183,11 @@ return (
           <div className="whos_going">
             <div className="p1">
               <img src={baby} alt="baby in a circle"/>
-              <p>{trip.family.name[0]}</p>
+              <p>A.Cooper</p>
             </div>
             <div className="p2">
               <img src={kid} alt="small child in a circle"/>
-              <p>{trip.family.name[1]}</p>
+              <p>N.Cooper</p>
             </div>
             <div className="p3">
               <a className="add" href= "/addfamilymember"><i class="fas fa-plus-circle fa-4x"></i></a>
