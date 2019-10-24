@@ -105,8 +105,7 @@ padding: 5%;
 }
 `
 
-const ReviewTrip = props => {
-  // const trip = props.trips
+const ReviewTrip = ({...trips}, props) => {
   const [trip] = useState(...booking);
 
   const handleEdit = e => {
@@ -118,11 +117,11 @@ return (
     <div className ="home-page-content">
     <div className="nav-container">
    <header>
-     <a href="/"><h2>KidsFly</h2></a>
+     <a href="https://kidsfly-web25.netlify.com/index.html"><h2>KidsFly</h2></a>
  <nav className="left-nav">
    <a href="/dashboard">Account</a>
    <a href="/bookingform">Plan Trip</a>
-   <a href="about.html">About</a>
+   <a href="https://kidsfly-web25.netlify.com/about.html">About</a>
  </nav>
  <nav className="right-nav">
    <a href="/messagesdashboard">Messages</a>
@@ -132,39 +131,39 @@ return (
 <ReviewStyle className="main-container">
       <div className="top-box">
         <h2>Review Your Trip</h2>
-        <h3>{trip.location}</h3>
-        <p>3 February, 2020</p>
+        <h3>{trips.airport}</h3>
+        <p>{trips.departureTime}</p>
       </div>
       <div className="bottom-box">
         <div className="left-middle-box">
           <div className="inner-icon first-icon">
             <i className="fas fa-check-square fa-3x"></i>
-            <p>{trip.door}</p>
+            {/* <p>{trip.door}</p> */}
             <button>Edit</button>
           </div>
           <div className="inner-icon">
             <i className="fas fa-user fa-3x"></i>
-            <p>{trip.assistant}</p>
+            {/* <p>{trip.assistant}</p> */}
             <button>Edit</button>
           </div>
           <div className="inner-icon">
             <i className="far fa-calendar-alt fa-3x"></i>
-            <p>{trip.date}</p>
+            {/* <p>{trip.date}</p> */}
             <button>Edit</button>
           </div>
           <div className="inner-icon">
             <i className="far fa-clock fa-3x"></i>
-            <p>{trip.time} Arrival</p>
+            {/* <p>{trip.time} Arrival</p> */}
             <button>Edit</button>
           </div>
           <div className="inner-icon">
             <i className="fas fa-users fa-3x"></i>
-            <p>{trip.passengers} Passengers</p>
+            {/* <p>{trip.passengers} Passengers</p> */}
             <button>Edit</button>
           </div>
           <div className="inner-icon">
             <i className="fas fa-plane fa-3x"></i>
-            <p>{trip.airplane}</p>
+            {/* <p>{trip.airplane}</p> */}
             <button>Edit</button>
           </div>
           <a href="/dashboard"><button>Confirm</button></a>

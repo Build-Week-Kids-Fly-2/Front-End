@@ -10,7 +10,7 @@ return (
     <SupportStyle>
     <div className="nav-container">
    <header>
-     <a href="/"><h2>KidsFly</h2></a>
+     <a href="https://kidsfly-web25.netlify.com/index.html"><h2>KidsFly</h2></a>
  <nav className="left-nav">
    <a href="/dashboard">Account</a>
    <a href="/bookingform">Plan Trip</a>
@@ -24,7 +24,7 @@ return (
     <div className="foot-container">
 <footer>
  <div className="footCol1">
-   <a href="about.html">About Us</a>
+   <a href="https://kidsfly-web25.netlify.com/about.html">About Us</a>
    <a href="/">Our Mission</a>
    <a href="/">Help</a>
    <a href="/stafflogin">Staff Log In</a>

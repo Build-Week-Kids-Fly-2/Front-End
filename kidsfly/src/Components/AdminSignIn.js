@@ -74,10 +74,10 @@ return (
    <div>
           <div className="nav-container">
         <header>
-          <a href="/"><h2>KidsFly</h2></a>
+          <a href="https://kidsfly-web25.netlify.com/index.html"><h2>KidsFly</h2></a>
       <nav className="left-nav">
         <a href="/travelersignup">Our Mission</a>
-        <a href="about.html">Our Services</a>
+        <a href="/">Our Services</a>
         <a href="/">Help</a>
       </nav>
       <nav className="right-nav">
