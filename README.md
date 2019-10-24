@@ -19,11 +19,11 @@
 
 - [x] Authorizations set up
 
-- [ ] CSS/SCSS/LESS
+- [x] CSS/SCSS/LESS
 
 - [x] Styling-Components
 
-- [ ] Reducers set up
+- [x] Context set up
 
 - [x] Routes 
 
