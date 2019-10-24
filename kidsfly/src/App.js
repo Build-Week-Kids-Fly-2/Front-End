@@ -17,7 +17,8 @@ import ReviewTrip from './Components/ReviewTrip';
 import StaffDashboard from './Components/StaffDashboard';
 import TravelerRegister from './Components/TravelerRegister';
 import TravelerSignIn from './Components/TravelerSignIn';
-import StaffUpcoming from "./Components/StaffUpcoming"
+import StaffUpcoming from "./Components/StaffUpcoming";
+import StaffArrival from "./Components/StaffArrival";
 function App() {
   return (
     <div className="App">
@@ -37,7 +38,7 @@ function App() {
      <PrivateRouter path= "/staffdashboard" component= {StaffDashboard}/>
     </Switch>
     {/* <AdminRegister /> */}
-    <StaffUpcoming />
+    <StaffArrival />
     </div>
   );
 }
