@@ -4,6 +4,7 @@ import {Route, Switch} from 'react-router-dom';
 import PrivateRouter from './utils/PrivateRouter';
 
 //components
+// import Main from './Components/Main';
 import AdminRegister from './Components/AdminRegister';
 import AdminSignIn from './Components/AdminSignIn';
 import BookingAssistant from './Components/BookingAssistant';
@@ -18,10 +19,14 @@ import StaffDashboard from './Components/StaffDashboard';
 import TravelerRegister from './Components/TravelerRegister';
 import TravelerSignIn from './Components/TravelerSignIn';
 import StaffUpcoming from "./Components/StaffUpcoming"
-function App() {
+
+function App = () => {
+
   return (
     <div className="App">
+      
       <Switch>
+    {/* <Route exact path= "/" component= {Main}/> */}
      <Route path= "/travelersignin" component= {TravelerSignIn}/>
      <Route path= "/adminsignin" component= {AdminSignIn}/>
      <Route path= "/adminregister" component= {AdminRegister}/>
