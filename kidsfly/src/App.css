@@ -64,7 +64,10 @@ header a {
 .right-nav a {
   margin-left: 5%;
 }
-
+/*content container*/
+.assistants {
+  display: flex;
+}
 /* Footer */
 .foot-container {
   width: 100%;

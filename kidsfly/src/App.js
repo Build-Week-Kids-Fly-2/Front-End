@@ -18,8 +18,10 @@ import ReviewTrip from './Components/ReviewTrip';
 import StaffDashboard from './Components/StaffDashboard';
 import TravelerRegister from './Components/TravelerRegister';
 import TravelerSignIn from './Components/TravelerSignIn';
+import StaffUpcoming from "./Components/StaffUpcoming"
 
-const App = () => {
+function App = () => {
+
   return (
     <div className="App">
       
@@ -39,7 +41,8 @@ const App = () => {
      <PrivateRouter path= "/reviewtrip" component= {ReviewTrip}/>
      <PrivateRouter path= "/staffdashboard" component= {StaffDashboard}/>
     </Switch>
-
+    {/* <AdminRegister /> */}
+    <StaffUpcoming />
     </div>
   );
 }
