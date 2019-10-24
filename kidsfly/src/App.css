@@ -215,6 +215,7 @@ footer {
 .booking {
 background-image: url(./img/booking.png);
 background-size: cover;
-height: 1000px;
+background-position: center;
+height: 1500px;
 width: 100%;
 }
