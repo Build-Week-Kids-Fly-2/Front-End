@@ -17,7 +17,7 @@ const StaffUpcomingStyle =styled.div`
     border-radius: 10px;
 }
 
-h4{
+.title{
 padding-left:60px;  
 width: 244px;
 height: 44px;
@@ -29,6 +29,15 @@ font-size: 18px;
 line-height: 22px;
 
 color: #293D3D;
+}
+
+.date{
+    margin-left: 200px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
 }
 .filform2{
     display: flex;
@@ -61,6 +70,38 @@ label{
     box-sizing: border-box;
     border-radius: 5px;
    }
+
+   .content{
+       display:flex;
+}
+
+.btns{
+    
+    background: #FFFFFF;
+    border: 1px solid #E0EAEB;
+    box-sizing: border-box;
+    
+    padding: 9px 50px;
+    
+}
+
+.btns2{
+    margin-left: 200px;
+    padding-top: 30px;
+}
+
+.btns3{
+    background: #E0EAEB;
+}
+
+.staffarrive{
+    display: flex;
+    background: #FFFFFF;
+    border: 1px solid #E0EAEB;
+    box-sizing: border-box;
+    width: 832px;
+    height: 237px;
+}
 `
 
 const StaffUpcoming = () => {
@@ -82,62 +123,73 @@ const StaffUpcoming = () => {
         </div>
 
         {/* content */}
-        <div className="onduty">
-        <h4>Auckland International Airport
+        <div className="content">
+            <section className="onduty">
+                <h4 className="title">Auckland International Airport
                      (AKL) </h4>
-        <hr></hr>
-        <h4>Staff on Duty </h4>
-        <div className="pic">
-            <div className="staffpic">
-                <img src={Jason} alt="Jason"/>
-                <h5>Jason K</h5>
-            </div>
-            <div className="staffpic">
-                <img src={Paula} alt="Paula"/>
-                <h5>Paula M </h5>
-            </div>
-            <div className="staffpic">
-                <img  src={Dani} alt="Dani"/>
-                <h5>Dani R </h5>
-            </div>
-            <div className="staffpic">
-                <img  src={John} alt="John"/>
-                <h5>John W</h5>
-            </div>
-            <div className="staffpic">
-                <img  src={Kelly} alt="Kelly"/>
-                <h5>Kelly K </h5>
-            </div>
-            <div className="staffpic">
-                <img src={Manesh} alt="Manesh"/>
-                <h5>Manesh P </h5>
-            </div>
-        </div>
-        <hr></hr>
-        <h4>Filter trips by </h4>
-        <div className="filform">
-            <div className="filform2">
-                <label>Departure</label>
-                <input
-                    type="text"
-                    name="departure"
-                    //  value={adminSignup.location}
-                    placeholder='Departure'
-                //  onChange={handleChange} required
-                />
-            </div>
-            <div className="filform2">
-                <label>Airline</label>
-                <input
-                    type="text"
-                    name="airline"
-                    //  value={adminSignup.airportping}
-                    placeholder='Airline'
-                //  onChange={handleChange} required
-                />
-            </div>
-         </div>
-        </div>
+                <hr></hr>
+                <h4 className="title">Staff on Duty </h4>
+                <div className="pic">
+                    <div className="staffpic">
+                        <img src={Jason} alt="Jason" />
+                        <h5>Jason K</h5>
+                    </div>
+                    <div className="staffpic">
+                        <img src={Paula} alt="Paula" />
+                        <h5>Paula M </h5>
+                    </div>
+                    <div className="staffpic">
+                        <img src={Dani} alt="Dani" />
+                        <h5>Dani R </h5>
+                    </div>
+                    <div className="staffpic">
+                        <img src={John} alt="John" />
+                        <h5>John W</h5>
+                    </div>
+                    <div className="staffpic">
+                        <img src={Kelly} alt="Kelly" />
+                        <h5>Kelly K </h5>
+                    </div>
+                    <div className="staffpic">
+                        <img src={Manesh} alt="Manesh" />
+                        <h5>Manesh P </h5>
+                    </div>
+                </div>
+                <hr></hr>
+                <h4 className="title">Filter trips by </h4>
+                <div className="filform">
+                    <div className="filform2">
+                        <label>Departure</label>
+                        <input
+                            type="text"
+                            name="departure"
+                            //  value={adminSignup.location}
+                            placeholder='Departure'
+                        //  onChange={handleChange} required
+                        />
+                    </div>
+                    <div className="filform2">
+                        <label>Airline</label>
+                        <input
+                            type="text"
+                            name="airline"
+                            //  value={adminSignup.airportping}
+                            placeholder='Airline'
+                        //  onChange={handleChange} required
+                        />
+                    </div>
+                </div>
+            </section>
+            <section className="arrival">
+                <div className="btns2">
+            <button className="btns">Arrived</button><button className="btns3 btns">Upcoming</button>
+                </div>
+                <h4 className="date">Saturday, 19 October 2019 </h4>
+                <div className="staffarrive">
+                    <p>Arrival Time </p> <p>10:30  am </p>
+                </div>
+            </section>
+    </div>
          {/* footer */}
       <div className="foot-container">
         <footer>
