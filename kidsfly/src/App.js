@@ -56,7 +56,7 @@ useEffect(() => {
      <PrivateRouter path= "/messagesdashboard" component= {MessagesDashboard}/>
      <PrivateRouter path= "/messagessupport" component= {MessagingSupportForm}/>
      <PrivateRouter path= "/reviewtrip" component= {ReviewTrip}/> 
-     <PrivateRouter path= "/staffdashboard" component= {StaffDashUpcoming}/>
+     <PrivateRouter path= "/staffdashboard" component= {StaffUpcoming}/>
      </TripContext.Provider>
     </Switch>
     </div>
