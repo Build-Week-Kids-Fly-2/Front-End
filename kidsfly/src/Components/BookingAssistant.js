@@ -141,9 +141,8 @@ const BookingAssistant = () => {
               <input
                 type="text"
                 name="languages"
-                //  value={adminSignup.name}
                 placeholder='Languages'
-              //  onChange={handleChange} required
+              
               />
             </div>
             <div className="filform">
@@ -151,9 +150,7 @@ const BookingAssistant = () => {
               <input
                 type="text"
                 name="experience"
-                //  value={adminSignup.location}
                 placeholder='Experience'
-              //  onChange={handleChange} required
               />
             </div>
             <div className="filform">
@@ -161,27 +158,20 @@ const BookingAssistant = () => {
               <input
                 type="text"
                 name="rating"
-                //  value={adminSignup.airportping}
                 placeholder='Rating'
-              //  onChange={handleChange} required
               />
             </div>
             <div className="filform">
               <label>Gender</label><input
                 type="text"
                 name="gender"
-                //  value={adminSignup.password}
                 placeholder='Gender'
-              //  onChange={handleChange} required
               />
             </div>
             <div className="filform">
               <label>Date Available</label><input
                 type="text"
-                name="date available"
-                //  value={adminSignup.password}
                 placeholder='Date Available'
-              //  onChange={handleChange} required
               />
             </div>
 
@@ -205,7 +195,7 @@ const BookingAssistant = () => {
         with children<br></br>
                 Knows Spanish and English </p>
             </div>
-            <div><button className="btn1 btn">Book</button></div>
+            <div><button className="btn1 btn"><a href="/reviewtrip">Book</a></button></div>
             
           </div>
      
@@ -226,7 +216,7 @@ const BookingAssistant = () => {
                 Knows English
               </p>
             </div>
-            <div><button className="btn2 btn">Book</button></div>
+            <div><button className="btn2 btn"><a href="/reviewtrip">Book</a></button></div>
           </div>
 
           <div className="assistants">
@@ -246,7 +236,7 @@ const BookingAssistant = () => {
                 Knows Japanese and English
         </p>
             </div>
-            <div><button className="btn3 btn">Book</button></div>
+            <div><button className="btn3 btn"><a href="/reviewtrip">Book</a></button></div>
           </div>
         </div>
       </div>

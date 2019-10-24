@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './App.css';
 import {Route, Switch} from 'react-router-dom';
+import {TripContext} from './Contexts/TripContext'
 import PrivateRouter from './utils/PrivateRouter';
 
 //components
@@ -18,11 +19,32 @@ import ReviewTrip from './Components/ReviewTrip';
 import StaffDashboard from './Components/StaffDashboard';
 import TravelerRegister from './Components/TravelerRegister';
 import TravelerSignIn from './Components/TravelerSignIn';
+import { axiosWithAuth } from './utils/AxiosWithAuth';
 
 function App () {
+const [trips, setTrips] = useState({
+  airport: 'JFKs',
+  airline: 'Alaskan',
+  flightNumber: 'KF202',
+  departureTime: '2:02pm',
+  carryOnBags: '3',
+  checkedBags: '0',
+  children: '3',
+  arrived: '0',
+  en_route: '0'
+})
+
+useEffect(() => {
+  axiosWithAuth() 
+  .get('api/user_trips/:id')
+  .then(res => setTrips(res.data))
+  .catch(err => console.log(err))
+})
+
   return (
     <div className="App">
       <Switch>
+      <TripContext.Provider value={trips}>
     {/* <Route exact path= "/" component= {Main}/> */}
      <Route path= "/travelersignin" component= {TravelerSignIn}/>
      <Route path= "/adminsignin" component= {AdminSignIn}/>
@@ -37,6 +59,7 @@ function App () {
      <PrivateRouter path= "/messagessupport" component= {MessagingSupportForm}/>
      <PrivateRouter path= "/reviewtrip" component= {ReviewTrip}/> 
      <PrivateRouter path= "/staffdashboard" component= {StaffDashboard}/>
+     </TripContext.Provider>
     </Switch>
 
     </div>
