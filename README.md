@@ -21,6 +21,8 @@
 
 - [ ] CSS/SCSS/LESS
 
+- [x] Styling-Components
+
 - [ ] Reducers set up
 
 - [x] Routes 
