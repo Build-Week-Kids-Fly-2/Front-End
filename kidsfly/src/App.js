@@ -18,7 +18,7 @@ import ReviewTrip from './Components/ReviewTrip';
 import StaffDashboard from './Components/StaffDashboard';
 import TravelerRegister from './Components/TravelerRegister';
 import TravelerSignIn from './Components/TravelerSignIn';
-
+import StaffUpcoming from "./Components/StaffUpcoming";
 import { axiosWithAuth } from './utils/AxiosWithAuth';
 
 function App () {
@@ -40,11 +40,6 @@ useEffect(() => {
   .then(res => setTrips(res.data))
   .catch(err => console.log(err))
 })
-
-import StaffUpcoming from "./Components/StaffUpcoming"
-
-function App = () => 
-
   return (
     <div className="App">
       <Switch>
