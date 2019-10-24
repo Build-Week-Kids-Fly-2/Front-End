@@ -5,7 +5,6 @@ import {TripContext} from './Contexts/TripContext'
 import PrivateRouter from './utils/PrivateRouter';
 
 //components
-// import Main from './Components/Main';
 import AdminRegister from './Components/AdminRegister';
 import AdminSignIn from './Components/AdminSignIn';
 import BookingAssistant from './Components/BookingAssistant';
@@ -19,6 +18,7 @@ import ReviewTrip from './Components/ReviewTrip';
 import StaffDashboard from './Components/StaffDashboard';
 import TravelerRegister from './Components/TravelerRegister';
 import TravelerSignIn from './Components/TravelerSignIn';
+
 import { axiosWithAuth } from './utils/AxiosWithAuth';
 
 function App () {
@@ -41,11 +41,14 @@ useEffect(() => {
   .catch(err => console.log(err))
 })
 
+import StaffUpcoming from "./Components/StaffUpcoming"
+
+function App = () => 
+
   return (
     <div className="App">
       <Switch>
       <TripContext.Provider value={trips}>
-    {/* <Route exact path= "/" component= {Main}/> */}
      <Route path= "/travelersignin" component= {TravelerSignIn}/>
      <Route path= "/adminsignin" component= {AdminSignIn}/>
      <Route path= "/adminregister" component= {AdminRegister}/>
@@ -61,7 +64,7 @@ useEffect(() => {
      <PrivateRouter path= "/staffdashboard" component= {StaffDashboard}/>
      </TripContext.Provider>
     </Switch>
-
+    <StaffUpcoming />
     </div>
   );
 }

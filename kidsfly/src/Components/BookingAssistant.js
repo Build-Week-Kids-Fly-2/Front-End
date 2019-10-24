@@ -5,6 +5,7 @@ import asst2 from "../img/assistant2.png"
 import asst3 from "../img/assistant3.png"
 
 
+
 const BookStyle = styled.div `
   .fas{
     color: gold;
@@ -104,6 +105,115 @@ const BookStyle = styled.div `
     box-sizing: border-box;
     border-radius: 5px;
    }
+=======
+
+
+const BookStyle = styled.div `
+  .fas{
+    color: gold;
+  }
+  h4 {
+    text-align: left;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    
+  }
+  
+  .jake{
+      position: absolute;
+      width: 195px;
+      height: 150px;
+      left: 560px;
+      top: 150px;
+    }
+   .john{
+      position: absolute;
+      width: 195px;
+      height: 150px;
+      left: 560px;
+      top: 380px;
+   } 
+   .julia{
+      position: absolute;
+      width: 195px;
+      height: 150px;
+      left: 560px;
+      top: 615px;
+   }
+  p {  
+    text-align: left;
+    font-size: 1.5rem;
+  }
+  .btn1{
+    position: absolute;
+    left: 70%;
+    top: 32%;   
+  }
+
+  .btn2{
+    position: absolute;
+    left: 70%;
+    top: 58%;   
+  }
+  .btn3{
+    position: absolute;
+    left: 70%;
+    top: 85%;   
+  }
+  .btn {
+    padding: 20px 100px;
+    background: #F5CA8A;
+    border-radius: 10px;
+  }
+
+   .asstcontent{
+    margin-left: 3%;
+  }
+
+  .assts{
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+ 
+  .filters{
+    padding-right: 60px;
+    border-right: 1px solid lightgrey;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  h3 {
+    padding-left: 100px;
+  }
+
+  .filform{
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    
+  }
+  .content-container{
+    display: flex;
+    padding-bottom: 20px;
+   }
+   label{
+     text-align:left;
+     padding-bottom: 10px;
+     padding-top: 30px;
+     font-size: 2rem;
+   }
+
+   input{
+    padding: 10px;
+    background: #FFFFFF;
+    border: 1px solid #E0EAEB;
+    box-sizing: border-box;
+    border-radius: 5px;
+   }
+
    .subbtn{
     background: #F5CA8A;
     border-radius: 10px;
@@ -141,8 +251,7 @@ const BookingAssistant = () => {
               <input
                 type="text"
                 name="languages"
-                placeholder='Languages'
-              
+
               />
             </div>
             <div className="filform">
@@ -150,7 +259,6 @@ const BookingAssistant = () => {
               <input
                 type="text"
                 name="experience"
-                placeholder='Experience'
               />
             </div>
             <div className="filform">
@@ -158,20 +266,17 @@ const BookingAssistant = () => {
               <input
                 type="text"
                 name="rating"
-                placeholder='Rating'
               />
             </div>
             <div className="filform">
               <label>Gender</label><input
                 type="text"
                 name="gender"
-                placeholder='Gender'
               />
             </div>
             <div className="filform">
               <label>Date Available</label><input
                 type="text"
-                placeholder='Date Available'
               />
             </div>
 
@@ -195,7 +300,10 @@ const BookingAssistant = () => {
         with children<br></br>
                 Knows Spanish and English </p>
             </div>
+
             <div><button className="btn1 btn"><a href="/reviewtrip">Book</a></button></div>
+            <div><button className="btn1 btn">Book</button></div>
+
             
           </div>
      
@@ -216,7 +324,10 @@ const BookingAssistant = () => {
                 Knows English
               </p>
             </div>
+
             <div><button className="btn2 btn"><a href="/reviewtrip">Book</a></button></div>
+            <div><button className="btn2 btn">Book</button></div>
+
           </div>
 
           <div className="assistants">
@@ -237,6 +348,7 @@ const BookingAssistant = () => {
         </p>
             </div>
             <div><button className="btn3 btn"><a href="/reviewtrip">Book</a></button></div>
+            <div><button className="btn3 btn">Book</button></div>
           </div>
         </div>
       </div>
@@ -270,6 +382,7 @@ const BookingAssistant = () => {
             </div>
         </BookStyle>
         </div>
+
   )
   }
 export default BookingAssistant; 
