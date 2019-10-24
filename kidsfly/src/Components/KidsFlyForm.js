@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 import {axiosWithAuth} from '../utils/AxiosWithAuth'
-import ReviewTrip from './ReviewTrip';
+
 
 const FormStyle = styled.div `
 .bookingform {

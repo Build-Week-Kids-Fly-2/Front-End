@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import booking from '../booking'
+// import booking from '../booking'
 import baby from '../img/family1.png'
 import kid from '../img/family3.png'
 const ReviewStyle = styled.div `
@@ -106,7 +106,8 @@ padding: 5%;
 `
 
 const ReviewTrip = ({...trips}, props) => {
-  const [trip] = useState(...booking);
+  // const [trip] = useState(...booking);
+// const trip = props.trips
 
   const handleEdit = e => {
     e.PreventDefault();
@@ -173,11 +174,11 @@ return (
           <div className="whos_going">
             <div className="p1">
               <img src={baby} alt="baby in a circle"/>
-              <p>{trip.family.name[0]}</p>
+              {/* <p>{trip.family.name[0]}</p> */}
             </div>
             <div className="p2">
               <img src={kid} alt="small child in a circle"/>
-              <p>{trip.family.name[1]}</p>
+              {/* <p>{trip.family.name[1]}</p> */}
             </div>
             <div className="p3">
               <a className="add" href= "/addfamilymember"><i class="fas fa-plus-circle fa-4x"></i></a>

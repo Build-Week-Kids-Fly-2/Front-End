@@ -19,10 +19,9 @@ import StaffDashboard from './Components/StaffDashboard';
 import TravelerRegister from './Components/TravelerRegister';
 import TravelerSignIn from './Components/TravelerSignIn';
 
-const App = () => {
+function App () {
   return (
     <div className="App">
-      
       <Switch>
     {/* <Route exact path= "/" component= {Main}/> */}
      <Route path= "/travelersignin" component= {TravelerSignIn}/>
@@ -36,7 +35,7 @@ const App = () => {
      <PrivateRouter path= "/addfamilymember" component= {FamilyMemberForm}/>
      <PrivateRouter path= "/messagesdashboard" component= {MessagesDashboard}/>
      <PrivateRouter path= "/messagessupport" component= {MessagingSupportForm}/>
-     <PrivateRouter path= "/reviewtrip" component= {ReviewTrip}/>
+     <PrivateRouter path= "/reviewtrip" component= {ReviewTrip}/> 
      <PrivateRouter path= "/staffdashboard" component= {StaffDashboard}/>
     </Switch>
 
