@@ -66,11 +66,7 @@ const BookStyle = styled.div `
     border-radius: 10px;
   }
 
-  .assistants{
-    border-bottom: 1px solid lightgrey;
-  }
-
-  .asstcontent{
+   .asstcontent{
     margin-left: 3%;
   }
 
@@ -152,7 +148,7 @@ const BookingAssistant = () => {
               <label>Languages</label>
               <input
                 type="text"
-                name="name"
+                name="languages"
                 //  value={adminSignup.name}
                 placeholder='Languages'
               //  onChange={handleChange} required
@@ -162,7 +158,7 @@ const BookingAssistant = () => {
               <label>Experience</label>
               <input
                 type="text"
-                name="location"
+                name="experience"
                 //  value={adminSignup.location}
                 placeholder='Experience'
               //  onChange={handleChange} required
@@ -172,7 +168,7 @@ const BookingAssistant = () => {
               <label>Rating</label>
               <input
                 type="text"
-                name="airportping"
+                name="rating"
                 //  value={adminSignup.airportping}
                 placeholder='Rating'
               //  onChange={handleChange} required
@@ -180,8 +176,8 @@ const BookingAssistant = () => {
             </div>
             <div className="filform">
               <label>Gender</label><input
-                type="password"
-                name="password"
+                type="text"
+                name="gender"
                 //  value={adminSignup.password}
                 placeholder='Gender'
               //  onChange={handleChange} required
@@ -189,10 +185,10 @@ const BookingAssistant = () => {
             </div>
             <div className="filform">
               <label>Date Available</label><input
-                type="password"
-                name="password"
+                type="text"
+                name="date available"
                 //  value={adminSignup.password}
-                placeholder='Date Availble'
+                placeholder='Date Available'
               //  onChange={handleChange} required
               />
             </div>
@@ -218,8 +214,9 @@ const BookingAssistant = () => {
                 Knows Spanish and English </p>
             </div>
             <div><button className="btn1 btn">Book</button></div>
+            
           </div>
-
+     
           <div className="assistants">
             <div className="assts"><img src={asst2} alt="man with glasses" /></div>
             <div className="john">
@@ -235,7 +232,7 @@ const BookingAssistant = () => {
                 Heavy lifting, CPR trained, good
                 with children<br></br>
                 Knows English
-    </p>
+              </p>
             </div>
             <div><button className="btn2 btn">Book</button></div>
           </div>
@@ -253,7 +250,7 @@ const BookingAssistant = () => {
                 110 jobs completed<br></br>
                 Background checked <br></br>
                 Heavy lifting, CPR trained, good
-        with children<br></br>
+                with children<br></br>
                 Knows Japanese and English
         </p>
             </div>
@@ -261,6 +258,7 @@ const BookingAssistant = () => {
           </div>
         </div>
       </div>
+      
       {/* footer */}
       <div className="foot-container">
         <footer>
