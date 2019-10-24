@@ -1,8 +1,9 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect} from 'react';
 import styled from 'styled-components';
 import baby from '../img/family1.png'
 import kid from '../img/family3.png'
 import { TripContext } from '../Contexts/TripContext';
+import { axiosWithAuth } from '../utils/AxiosWithAuth';
 
 const ReviewStyle = styled.div `
 padding: 5%;
@@ -112,6 +113,15 @@ padding: 5%;
 const ReviewTrip = () => {
   const trips = useContext(TripContext)
 
+  useEffect(()=> {
+    axiosWithAuth()
+    .put('/api/user_trips/:id', trips)
+    .then(res => {
+      localStorage.getItem('token')
+      console.log("res", res.data)
+    }, [])
+    .catch(err => console.log(err.response))
+  })
   const handleEdit = e => {
     e.PreventDefault();
       }
@@ -136,8 +146,9 @@ return (
       <div className="top-box">
         <h2>Review Your Trip</h2>
         <h3>Alaska</h3>
-        <p>{trips.flightNumber}</p>
+        <p>{trips.airport}</p>
         <p>{trips.airline}</p>
+        <p>{trips.flightNumber}</p>
       </div>
       <div className="bottom-box">
         <div className="left-middle-box">
@@ -149,7 +160,7 @@ return (
           <div className="inner-icon">
             <i className="fas fa-luggage-cart fa-3x"></i>
             <p>{trips.checkedBags} checked bags</p>
-            <button onSubmit= {handleEdit}><a href="/booking">Edit</a></button>
+            <button onSubmit= {handleEdit}>Edit</button>
           </div>
           <div className="inner-icon">
             <i className="far fa-check-square fa-3x"></i>

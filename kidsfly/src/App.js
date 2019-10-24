@@ -15,7 +15,7 @@ import KidsFlyForm from './Components/KidsFlyForm';
 import MessagesDashboard from './Components/MessagesDashboard';
 import MessagingSupportForm from './Components/MessagingSupportForm';
 import ReviewTrip from './Components/ReviewTrip';
-import StaffDashboard from './Components/StaffDashboard';
+// import StaffDashboard from './Components/StaffDashboard';
 import TravelerRegister from './Components/TravelerRegister';
 import TravelerSignIn from './Components/TravelerSignIn';
 import StaffUpcoming from "./Components/StaffUpcoming";
@@ -25,11 +25,11 @@ function App () {
 const [trips, setTrips] = useState({
   airport: 'JFKs',
   airline: 'Alaskan',
-  flightNumber: 'KF202',
-  departureTime: '2:02pm',
-  carryOnBags: '3',
+  flightNumber: 'K2101',
+  departureTime: '2:02 pm',
+  carryOnBags: '6',
   checkedBags: '0',
-  children: '3',
+  children: '5',
   arrived: '0',
   en_route: '0'
 })
@@ -37,9 +37,13 @@ const [trips, setTrips] = useState({
 useEffect(() => {
   axiosWithAuth() 
   .get('api/user_trips/:id')
-  .then(res => setTrips(res.data))
+  .then(res => {
+    console.log(res.data)
+    setTrips(res.data)
+  })
   .catch(err => console.log(err))
 })
+
   return (
     <div className="App">
       <Switch>

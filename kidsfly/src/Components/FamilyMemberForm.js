@@ -4,11 +4,6 @@ import {family} from '../data'
 // import { axiosWithAuth } from '../utils/AxiosWithAuth';
 import styled from 'styled-components';
 
-//images 
-import image from '../img/profile1.png'
-import image1 from '../img/family1.png'
-import image2 from '../img/family3.png'
-
 //components
 import FamilyPassport from './FamilyPassport'
 import FamilyCard from './FamilyCard'

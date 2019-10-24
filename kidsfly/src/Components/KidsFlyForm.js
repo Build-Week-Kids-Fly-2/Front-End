@@ -81,7 +81,8 @@ const handleChange = e => {
       axiosWithAuth()
       .post('/api/user_trips/add', trips)
       .then(res => {
-          localStorage.setItem('token', res.data.payload);
+          localStorage.setItem("token", res.data);
+          // console.log("data has been saved")
           props.history.push('/reviewtrip')
       })
       .catch(err => console.log(err));
