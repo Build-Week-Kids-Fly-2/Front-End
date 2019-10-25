@@ -105,7 +105,8 @@ const TravelerSignIn = props => {
         axiosWithAuth()
         .post('/api/auth/login', credentials)
         .then(res => {
-            localStorage.setItem('token', res.data.payload);
+          console.log(res.data)
+            localStorage.setItem('token', res.data.token);
             props.history.push('/dashboard')
         })
         .catch(err => console.log(err));

@@ -29,7 +29,7 @@ switch(action.type) {
     case ADDING_TRIP_SUCCESS:
         return {
             ...state,
-            trip: action.payload
+            trip: [...state.trip, action.payload]
         }
 
         default:

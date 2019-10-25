@@ -10,7 +10,7 @@ export const ADDING_TRIP_FAILURE = 'ADDING_TRIP_FAILURE'
 export const fetchTrip = trips => dispatch => {
     dispatch({type: FETCHING_TRIP_START})
     axiosWithAuth()
-    .post('/api/user_trips/add', trips)
+    .get("/api/user_trips",trips)
     .then(res => {
         // console.log(res)
         dispatch({

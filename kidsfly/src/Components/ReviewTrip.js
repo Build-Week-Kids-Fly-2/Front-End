@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import styled from 'styled-components';
 import {connect} from 'react-redux';
 import {fetchTrip} from '../actions/index'
@@ -111,12 +111,12 @@ padding: 5%;
 }
 `
 
-const ReviewTrip = (props, {...trips}) => {
-  const trip = useState({...trips})
+const ReviewTrip = (props) => {
+  const takeTrip = props.trips
+
   useEffect(()=> {
     props.fetchTrip()
-    console.log(props.trips)
-  })
+  }, [])
 
   const handleEdit = e => {
     e.preventDefault();
@@ -142,30 +142,30 @@ return (
       <div className="top-box">
         <h2>Review Your Trip</h2>
         <h3>Alaska</h3>
-        <p>{trip.airport}</p>
-        <p>{trip.airline}</p>
-        <p>{trip.flightNumber}</p>
+        <p>{takeTrip.airport}</p>
+        <p>{takeTrip.airline}</p>
+        <p>{takeTrip.flightNumber}</p>
       </div>
       <div className="bottom-box">
         <div className="left-middle-box">
           <div className="inner-icon first-icon">
             <i className="fas fa-shopping-bag fa-3x"></i>
-            <p>{trip.carryOnBags} carry-on bags</p>
+            <p>{takeTrip.carryOnBags} carry-on bags</p>
             <button onSubmit= {handleEdit}>Edit</button>
           </div>
           <div className="inner-icon">
             <i className="fas fa-luggage-cart fa-3x"></i>
-            <p>{trip.checkedBags} checked bags</p>
+            <p>{takeTrip.checkedBags} checked bags</p>
             <button onSubmit= {handleEdit}>Edit</button>
           </div>
           <div className="inner-icon">
             <i className="far fa-check-square fa-3x"></i>
-            <p>{trip.arrived} arrived </p>
+            <p>{takeTrip.arrived} arrived </p>
             <button onSubmit= {handleEdit}>Edit</button>
           </div>
           <div className="inner-icon">
             <i className="far fa-clock fa-3x"></i>
-            <p>{trip.departureTime} Arrival</p>
+            <p>{takeTrip.departureTime} Arrival</p>
             <button onSubmit= {handleEdit}>Edit</button>
           </div>
           <div className="inner-icon">
@@ -175,12 +175,12 @@ return (
           </div>
           <div className="inner-icon">
             <i className="fas fa-users fa-3x"></i>
-            <p>{trip.children} Children</p>
+            <p>{takeTrip.children} Children</p>
             <button onSubmit= {handleEdit}>Edit</button>
           </div>
           <div className="inner-icon">
             <i className="fas fa-plane fa-3x"></i>
-            <p>{trip.en_route} en-route </p>
+            <p>{takeTrip.en_route} en-route </p>
             <button onSubmit= {handleEdit}>Edit</button>
           </div>
           <a href="/dashboard"><button>Confirm</button></a>
@@ -211,7 +211,7 @@ return (
     <div className="foot-container">
 <footer>
  <div className="footCol1">
-   <a href="about.html">About Us</a>
+   <a href="https://kidsfly-web25.netlify.com/about.html">About Us</a>
    <a href="/">Our Mission</a>
    <a href="/">Help</a>
    <a href="/stafflogin">Staff Log In</a>
