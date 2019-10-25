@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 import Jason from "../img/profile9.png";
 import John from "../img/profile10.png";
@@ -161,16 +162,13 @@ const StaffUpcoming = () => {
     return (
       <StaffUpcomingStyle>
           {/* navigation */}
-        <div className="nav-container">
+          <div className="nav-container">
           <header>
             <a href="landing.html"><h2>KidsFly</h2></a>
             <nav className="left-nav">
-              <a href="/dashboard">Account</a>
-              <a href="/bookingform">Plan Trip</a>
-              <a href="about.html">About</a>
             </nav>
             <nav className="right-nav">
-              <a href="/messagesdashboard">Messages</a>
+              <a href="/stafflogout">Staff Logout</a>
             </nav>
           </header>
         </div>
@@ -235,7 +233,8 @@ const StaffUpcoming = () => {
             </section>
             <section className="arrival">
                 <div className="btns2">
-            <button className="btns">Arrived</button><button className="btns3 btns">Upcoming</button>
+                <Link to="/staffarrived"><button className="btns">Arrived</button></Link>
+       <Link to ="/staffupcoming"><button className="btns3 btns">Upcoming</button></Link>
                 </div>
                 <h4 className="date">Saturday, 19 October 2019 </h4>
                 <div className="staffarrive">

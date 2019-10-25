@@ -14,11 +14,10 @@ import KidsFlyForm from './Components/KidsFlyForm';
 import MessagesDashboard from './Components/MessagesDashboard';
 import MessagingSupportForm from './Components/MessagingSupportForm';
 import ReviewTrip from './Components/ReviewTrip';
-// import StaffDashboard from './Components/StaffDashboard';
 import TravelerRegister from './Components/TravelerRegister';
 import TravelerSignIn from './Components/TravelerSignIn';
 import StaffUpcoming from "./Components/StaffUpcoming";
-// import { axiosWithAuth } from './utils/AxiosWithAuth';
+import StaffArrival from './Components/StaffArrival';
 
 function App () {
 
@@ -37,7 +36,8 @@ function App () {
      <PrivateRouter path= "/messagesdashboard" component= {MessagesDashboard}/>
      <PrivateRouter path= "/messagessupport" component= {MessagingSupportForm}/>
      <PrivateRouter path= "/reviewtrip" component= {ReviewTrip}/> 
-     <PrivateRouter path= "/staffdashboard" component= {StaffUpcoming}/>
+     <PrivateRouter path = '/StaffUpcoming' component={StaffUpcoming}/>
+      <PrivateRouter path = '/StaffArrived' component={StaffArrival}/>
     </Switch>
     </div>
   );

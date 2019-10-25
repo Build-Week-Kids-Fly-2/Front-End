@@ -70,8 +70,6 @@ const KidsFlyForm = props => {
 
 })
 
-
-
 const handleChange = e => {
     setTrips(
      { ...trips,
@@ -162,7 +160,7 @@ return (
                  onChange={handleChange} 
                   required
                  />
-                  <label>Arrived</label>
+                  <label>Number of Arrived</label>
                   <input 
                 type="number"
                  name="arrived"

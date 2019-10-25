@@ -65,7 +65,7 @@ const AdminSignIn = props => {
         .post('/api/auth/admin/login', credentials)
         .then(res => {
             localStorage.setItem('token', res.data.payload);
-            props.history.push('/staffdashboard')
+            props.history.push('/staffarrived')
         })
         .catch(err => console.log(err));
     }
