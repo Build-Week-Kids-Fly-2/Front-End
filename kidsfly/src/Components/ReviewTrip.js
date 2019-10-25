@@ -111,7 +111,8 @@ padding: 5%;
 }
 `
 
-const ReviewTrip = (props) => {
+const ReviewTrip = (props, {...trips}) => {
+  const trip = useState({...trips})
   useEffect(()=> {
     props.fetchTrip()
     console.log(props.trips)
