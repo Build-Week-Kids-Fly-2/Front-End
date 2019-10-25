@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
-import {axiosWithAuth} from '../utils/AxiosWithAuth'
+import {connect} from 'react-redux'
+import {addTrip} from '../actions/index'
 
 
 const FormStyle = styled.div `
@@ -69,6 +70,8 @@ const KidsFlyForm = props => {
 
 })
 
+
+
 const handleChange = e => {
     setTrips(
      { ...trips,
@@ -78,15 +81,10 @@ const handleChange = e => {
 
      const handleSubmit = e => {
       e.preventDefault();
-      axiosWithAuth()
-      .post('/api/user_trips/add', trips)
-      .then(res => {
-          localStorage.setItem("token", res.data);
-          // console.log("data has been saved")
-          props.history.push('/reviewtrip')
-      })
-      .catch(err => console.log(err));
-  }
+      console.log(trips)
+      props.addTrip(trips)
+      props.history.push('/reviewtrip')
+      }
 return (
   <div className="booking">
          <div className="nav-container">
@@ -188,4 +186,8 @@ return (
 )
 }
 
-export default KidsFlyForm;
+const mapStateToProps = () => {
+  return {}
+}
+
+export default connect(mapStateToProps,{addTrip})(KidsFlyForm);

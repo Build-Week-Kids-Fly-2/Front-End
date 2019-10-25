@@ -1,9 +1,10 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
+import {connect} from 'react-redux';
+import {fetchTrip} from '../actions/index'
 import baby from '../img/family1.png'
 import kid from '../img/family3.png'
-import { TripContext } from '../Contexts/TripContext';
-import { axiosWithAuth } from '../utils/AxiosWithAuth';
+
 
 const ReviewStyle = styled.div `
 padding: 5%;
@@ -110,20 +111,14 @@ padding: 5%;
 }
 `
 
-const ReviewTrip = () => {
-  const trips = useContext(TripContext)
-
+const ReviewTrip = (props) => {
   useEffect(()=> {
-    axiosWithAuth()
-    .put('/api/user_trips/:id', trips)
-    .then(res => {
-      localStorage.getItem('token')
-      console.log("res", res.data)
-    }, [])
-    .catch(err => console.log(err.response))
+    props.fetchTrip()
+    console.log(props.trips)
   })
+
   const handleEdit = e => {
-    e.PreventDefault();
+    e.preventDefault();
       }
   
 return (
@@ -146,30 +141,30 @@ return (
       <div className="top-box">
         <h2>Review Your Trip</h2>
         <h3>Alaska</h3>
-        <p>{trips.airport}</p>
-        <p>{trips.airline}</p>
-        <p>{trips.flightNumber}</p>
+        <p>{trip.airport}</p>
+        <p>{trip.airline}</p>
+        <p>{trip.flightNumber}</p>
       </div>
       <div className="bottom-box">
         <div className="left-middle-box">
           <div className="inner-icon first-icon">
             <i className="fas fa-shopping-bag fa-3x"></i>
-            <p>{trips.carryOnBags} carry-on bags</p>
+            <p>{trip.carryOnBags} carry-on bags</p>
             <button onSubmit= {handleEdit}>Edit</button>
           </div>
           <div className="inner-icon">
             <i className="fas fa-luggage-cart fa-3x"></i>
-            <p>{trips.checkedBags} checked bags</p>
+            <p>{trip.checkedBags} checked bags</p>
             <button onSubmit= {handleEdit}>Edit</button>
           </div>
           <div className="inner-icon">
             <i className="far fa-check-square fa-3x"></i>
-            <p>{trips.arrived} arrived </p>
+            <p>{trip.arrived} arrived </p>
             <button onSubmit= {handleEdit}>Edit</button>
           </div>
           <div className="inner-icon">
             <i className="far fa-clock fa-3x"></i>
-            <p>{trips.departureTime} Arrival</p>
+            <p>{trip.departureTime} Arrival</p>
             <button onSubmit= {handleEdit}>Edit</button>
           </div>
           <div className="inner-icon">
@@ -179,12 +174,12 @@ return (
           </div>
           <div className="inner-icon">
             <i className="fas fa-users fa-3x"></i>
-            <p>{trips.children} Children</p>
+            <p>{trip.children} Children</p>
             <button onSubmit= {handleEdit}>Edit</button>
           </div>
           <div className="inner-icon">
             <i className="fas fa-plane fa-3x"></i>
-            <p>{trips.en_route} en-route </p>
+            <p>{trip.en_route} en-route </p>
             <button onSubmit= {handleEdit}>Edit</button>
           </div>
           <a href="/dashboard"><button>Confirm</button></a>
@@ -242,5 +237,9 @@ return (
 </div>
 )
 }
-
-export default ReviewTrip;
+const mapStateToProps = state => {
+  return {
+    trips: state.trip
+  }
+}
+export default connect(mapStateToProps, {fetchTrip}) (ReviewTrip);
