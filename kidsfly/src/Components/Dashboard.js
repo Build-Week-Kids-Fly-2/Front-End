@@ -1,5 +1,11 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
+import {connect} from 'react-redux';
+import {addNewTrip, deleteTrip, fetchNewTrip} from '../actions/index';
+import AddNewTrip from './addNewTripForm'
+import NewTrip from './NewTrip';
+
+//images
 import Paris from "../img/Paris.png"
 import Lisbon from "../img/Lisbon.png"
 import Sydney from "../img/Sydney.png"
@@ -41,8 +47,46 @@ const DashboardStyle = styled.div `
    .foot-container{
      padding-top: 20px;
    }
+
+   .addtrip {
+    width: 223px;
+    height: 304px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    background: #FFFFFF;
+    border: 1px solid #E0EAEB;
+    box-sizing: border-box;
+    border-radius: 5px;
+    cursor:pointer;
+   }
 `
-const Dashboard = () => {
+const Dashboard = (props) => {
+  const newTrip = props.newTrip
+  const [upcomingTrips, setUpcomingTrips] = useState({
+  name: ''
+  })
+  console.log(props.newTrip.name)
+  const handleChanges = e => {
+    setUpcomingTrips({...upcomingTrips, [e.target.name]: e.target.value})
+  }
+
+  const addNewTrip = e => {
+    e.preventDefault();
+    // console.log(trip)
+    props.addNewTrip(upcomingTrips)
+
+    }
+
+    const deleteTrip = e => {
+      e.preventDefault()
+      props.deleteTrip(newTrip.id)
+    }
+
+    useEffect(()=> {
+      props.fetchNewTrip()
+    }, [])
 return (
     <DashboardStyle>
       {/* navigation */}
@@ -52,7 +96,7 @@ return (
       <nav className="left-nav">
         <a href="/dashboard">Account</a>
         <a href="/bookingform">Plan Trip</a>
-        <a href="about.html">About</a>
+        <a href="https://kidsfly-web25.netlify.com/about.html">About</a>
       </nav>
       <nav className="right-nav">
         <a href="/messagesdashboard">Messages</a>
@@ -62,15 +106,27 @@ return (
       <h3>Your Upcoming Trips </h3>
       <section className="comingtrips">
         <div>
+        <i className="fas fa-times fa-2x"/>
           <img className="pics" src={Aukland}alt="Aukland" />
-          <h4>Aukland</h4>
+          <h4>Auckland</h4>
         </div>
         <div>
+        <i onClick= {deleteTrip} className="fas fa-times fa-2x"/>
           <img className="pics" src={Fiji}alt="Fiji"/>
           <h4>Fiji</h4>
         </div>
+            <AddNewTrip
+            key={upcomingTrips.id} 
+            trips={upcomingTrips} 
+            handleChanges={handleChanges}
+            addNewTrip={addNewTrip}
+            newTrip={props.newTrip}
+            />
       </section>
       <h3>Your Past Trips</h3>
+      {/* {props.trips.map(newTrip => {
+                return <NewTrip newTrip={newTrip}/>
+            })} */}
       <section className="pasttrips">
         <div>
           <img className="pics" src={Tokyo}alt="Tokyo" />
@@ -127,4 +183,11 @@ return (
 )
 }
 
-export default Dashboard;
+const mapStateToProps = state => {
+  return {
+    trip: state.trip,
+    newTrip: state.newTrip
+  }
+}
+
+export default connect(mapStateToProps, {fetchNewTrip, deleteTrip, addNewTrip}) (Dashboard);

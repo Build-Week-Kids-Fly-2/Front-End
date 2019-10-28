@@ -10,6 +10,7 @@ import BookingAssistant from './Components/BookingAssistant';
 import Dashboard from './Components/Dashboard';
 import DirectMessaging from './Components/DirectMessaging';
 import FamilyMemberForm from './Components/FamilyMemberForm';
+import AddNewTrip from './Components/addNewTripForm'
 import KidsFlyForm from './Components/KidsFlyForm';
 import MessagesDashboard from './Components/MessagesDashboard';
 import MessagingSupportForm from './Components/MessagingSupportForm';
@@ -33,6 +34,7 @@ function App () {
      <PrivateRouter path= "/dashboard" component= {Dashboard}/>
      <PrivateRouter path= "/messages" component= {DirectMessaging}/>
      <PrivateRouter path= "/addfamilymember" component= {FamilyMemberForm}/>
+     <PrivateRouter path="/addnewtrip" component={AddNewTrip}/>
      <PrivateRouter path= "/messagesdashboard" component= {MessagesDashboard}/>
      <PrivateRouter path= "/messagessupport" component= {MessagingSupportForm}/>
      <PrivateRouter path= "/reviewtrip" component= {ReviewTrip}/> 

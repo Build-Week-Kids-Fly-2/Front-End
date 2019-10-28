@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
-import {connect} from 'react-redux'
-import {addTrip} from '../actions/index'
+import {connect} from 'react-redux';
+import {addTrip} from '../actions/index';
+
+
 
 
 const FormStyle = styled.div `
@@ -9,8 +11,8 @@ const FormStyle = styled.div `
 background: white;
 padding: 5%;
 margin: 5%;
-width: 40%;
-height: 1100px;
+width: 45%;
+height: 1200px;
 }
 h1 {
   font-size: 3.2rem;
@@ -24,12 +26,11 @@ input {
   font-size: 1.6rem;
   width: 432px;
   height: 44px;
-  left: 64px;
-  top: 351px;
   background: rgba(255, 255, 255, 0.3);
   border: 0.5px solid #293D3D;
   box-sizing: border-box;
   border-radius: 5px;
+  font-family: Lato;
 }
 
 select {
@@ -37,14 +38,12 @@ select {
   font-size: 1.6rem;
   width: 432px;
   height: 44px;
-  left: 64px;
-  top: 351px;
   background: rgba(255, 255, 255, 0.3);
   border: 0.5px solid #293D3D;
   box-sizing: border-box;
   border-radius: 5px;
 }
-button {
+.book {
   font-size: 2.4rem;
   color: #293D3D;
   font-weight: bold;
@@ -57,7 +56,7 @@ button {
 `
 
 const KidsFlyForm = props => {
-  const [trips, setTrips] = useState({
+  const [trip, setTrip] = useState({
     airport: '',
     airline: '',
     flightNumber: '',
@@ -67,20 +66,21 @@ const KidsFlyForm = props => {
     children: '',
     arrived: '',
     en_route: ''
-
 })
 
+
+
 const handleChange = e => {
-    setTrips(
-     { ...trips,
+    setTrip(
+     { ...trip,
       [e.target.name]: e.target.value
      })
      } //end handlechange
 
      const handleSubmit = e => {
       e.preventDefault();
-      console.log(trips)
-      props.addTrip(trips)
+      // console.log(trip)
+      props.addTrip(trip)
       props.history.push('/reviewtrip')
       }
 return (
@@ -108,7 +108,7 @@ return (
         <input 
                 type="text"
                  name="airport"
-                 value={trips.airport}
+                 value={trip.airport}
                  onChange={handleChange} 
                   required
                  />
@@ -116,7 +116,7 @@ return (
                   <input 
                 type="text"
                  name="airline"
-                 value={trips.airline}
+                 value={trip.airline}
                  onChange={handleChange} 
                   required
                  />
@@ -124,23 +124,24 @@ return (
                   <input 
                 type="text"
                  name="flightNumber"
-                 value={trips.flightNumber}
+                 value={trip.flightNumber}
                  onChange={handleChange} 
                   required
                  />
-                  <label>Departure Time</label>
+                  <label>Departure</label>
                   <input 
                 type="time"
                  name="departureTime"
-                 value={trips.departureTime}
+                 value={trip.departureTime}
                  onChange={handleChange} 
+                 format="MM/DD/YY"
                   required
                  />
                   <label>Carry-on Bags</label>
                   <input 
                 type="number"
                  name="carryOnBags"
-                 value={trips.carryOnBags}
+                 value={trip.carryOnBags}
                  onChange={handleChange} 
                   required
                  />
@@ -148,7 +149,7 @@ return (
                   <input 
                 type="number"
                  name="checkedBags"
-                 value={trips.checkedBags}
+                 value={trip.checkedBags}
                  onChange={handleChange} 
                   required
                  />
@@ -156,15 +157,15 @@ return (
                   <input 
                 type="number"
                  name="children"
-                 value={trips.children}
+                 value={trip.children}
                  onChange={handleChange} 
                   required
                  />
-                  <label>Number of Arrived</label>
+                  <label>Arrived</label>
                   <input 
                 type="number"
                  name="arrived"
-                 value={trips.arrived}
+                 value={trip.arrived}
                  onChange={handleChange} 
                   required
                  />
@@ -172,11 +173,11 @@ return (
                   <input 
                 type="number"
                  name="en_route"
-                 value={trips.en_route}
+                 value={trip.en_route}
                  onChange={handleChange} 
                   required
                  />
-                <button>Book Trip</button>
+                <button className="book">Book Trip</button>
         </form>
       </div>
     </FormStyle>

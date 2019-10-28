@@ -164,11 +164,11 @@ const StaffUpcoming = () => {
           {/* navigation */}
           <div className="nav-container">
           <header>
-            <a href="landing.html"><h2>KidsFly</h2></a>
+            <a href="ttps://kidsfly-web25.netlify.com/index.html"><h2>KidsFly</h2></a>
             <nav className="left-nav">
             </nav>
             <nav className="right-nav">
-              <a href="/stafflogout">Staff Logout</a>
+              <a href="/adminsigin">Staff Logout</a>
             </nav>
           </header>
         </div>
