@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {connect} from 'react-redux';
 import {addNewTrip, deleteTrip, fetchNewTrip} from '../actions/index';
 import AddNewTrip from './addNewTripForm'
-import NewTrip from './NewTrip';
+import NewTrip from './NewTrip'
 
 //images
 import Paris from "../img/Paris.png"
@@ -11,8 +11,9 @@ import Lisbon from "../img/Lisbon.png"
 import Sydney from "../img/Sydney.png"
 import Seoul from "../img/Seoul.png"
 import Tokyo from "../img/tokyo.png"
-import Aukland from "../img/Aukland.png"
-import Fiji from "../img/Fiji.png"
+// import Aukland from "../img/Aukland.png"
+// import Fiji from "../img/Fiji.png"
+
 const DashboardStyle = styled.div `
   .pasttrips{
     display: flex;
@@ -23,8 +24,10 @@ const DashboardStyle = styled.div `
 
    .comingtrips{
      display: flex;
+     flex-flow: wrap;
      margin-left: 20px;
      margin-right: 20px;
+     padding: 1%;
      border-bottom: 1px solid lightgrey;
      padding-bottom: 20px;
    }
@@ -61,27 +64,32 @@ const DashboardStyle = styled.div `
     border-radius: 5px;
     cursor:pointer;
    }
+   .trips {
+     display: flex;
+      flex-flow: column;
+   }
 `
 const Dashboard = (props) => {
   const newTrip = props.newTrip
-  const [upcomingTrips, setUpcomingTrips] = useState({
-  name: ''
-  })
-  console.log(props.newTrip.name)
+  const [upcomingTrips, setUpcomingTrips] = useState([])
+  
+  // console.log('res', newTrip)
   const handleChanges = e => {
     setUpcomingTrips({...upcomingTrips, [e.target.name]: e.target.value})
   }
 
   const addNewTrip = e => {
     e.preventDefault();
-    // console.log(trip)
+    // console.log(newTrip)
     props.addNewTrip(upcomingTrips)
 
     }
 
     const deleteTrip = e => {
       e.preventDefault()
-      props.deleteTrip(newTrip.id)
+      console.log(newTrip)
+
+      props.deleteTrip(newTrip[0].id)
     }
 
     useEffect(()=> {
@@ -104,17 +112,11 @@ return (
       </header>
       </div>
       <h3>Your Upcoming Trips </h3>
+      {/* <h4>{newTrip.message}</h4> */}
       <section className="comingtrips">
-        <div>
-        <i className="fas fa-times fa-2x"/>
-          <img className="pics" src={Aukland}alt="Aukland" />
-          <h4>Auckland</h4>
-        </div>
-        <div>
-        <i onClick= {deleteTrip} className="fas fa-times fa-2x"/>
-          <img className="pics" src={Fiji}alt="Fiji"/>
-          <h4>Fiji</h4>
-        </div>
+      {newTrip.map(newTrip => {
+                return <NewTrip key={newTrip.id} upcoming={newTrip} deleteTrip={deleteTrip}/>
+            })}
             <AddNewTrip
             key={upcomingTrips.id} 
             trips={upcomingTrips} 
@@ -124,9 +126,6 @@ return (
             />
       </section>
       <h3>Your Past Trips</h3>
-      {/* {props.trips.map(newTrip => {
-                return <NewTrip newTrip={newTrip}/>
-            })} */}
       <section className="pasttrips">
         <div>
           <img className="pics" src={Tokyo}alt="Tokyo" />
@@ -185,7 +184,6 @@ return (
 
 const mapStateToProps = state => {
   return {
-    trip: state.trip,
     newTrip: state.newTrip
   }
 }

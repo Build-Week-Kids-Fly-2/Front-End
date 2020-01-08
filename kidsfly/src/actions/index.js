@@ -63,7 +63,7 @@ export const addNewTrip = newTrip => dispatch => {
     axiosWithAuth()
     .post('/api/trips/add', newTrip)
     .then(newTrip => {
-        // console.log("res", res.data)
+        console.log("added", newTrip)
         dispatch({
             type: ADDING_NEW_TRIP_SUCCESS,
             payload: newTrip
@@ -78,7 +78,7 @@ export const updateTrip = (id, updatedTrip) => (dispatch) => {
     axiosWithAuth()
     .put(`/api/user_trips/${id}`, updatedTrip)
     .then(res => {
-        console.log(res.data)
+        console.log("added", res)
         dispatch({
             type: UPDATE_TRIP_SUCCESS,
             payload: res
@@ -87,11 +87,12 @@ export const updateTrip = (id, updatedTrip) => (dispatch) => {
     })
     .catch(err => console.log(err))
 }
-export const deleteTrip = (id) => dispatch => {
+export const deleteTrip = id => dispatch => {
     dispatch({type: REMOVE_TRIP_START})
     axiosWithAuth()
     .delete(`/api/trips/${id}`)
     .then(res => {
+        console.log("deleted", res)
         dispatch({
             type: REMOVE_TRIP_SUCCESS,
             payload: res

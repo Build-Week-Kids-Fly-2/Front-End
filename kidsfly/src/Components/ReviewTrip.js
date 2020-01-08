@@ -2,7 +2,7 @@ import React, {useState ,useEffect} from 'react';
 import {ReviewStyle} from '../styled/ReviewStyle'
 import {connect} from 'react-redux';
 import {fetchTrip} from '../actions/index';
-import {updateTrip, deleteTrip} from '../actions/index'
+import {updateTrip} from '../actions/index'
 import TripData from './TripData';
 
 //images
@@ -61,7 +61,7 @@ return (
         <p>{trip.flightNumber}</p>
         </div>
         <div className="middle">
-       <TripData key= {props.trip.id} trip= {trip} newTrip={newTrip} deleteTrip={deleteTrip} handleChanges={handleChanges} updateTrip={updateTrip}/>
+       <TripData key= {props.trip.id} trip= {trip} newTrip={newTrip} handleChanges={handleChanges} updateTrip={updateTrip}/>
           <div className="right-middle-box">
 <h3>Who is joining your trip?</h3>
           <div className="whos_going">
@@ -120,4 +120,4 @@ const mapStateToProps = state => {
     isEditing: state.isEditing
   }
 }
-export default connect(mapStateToProps, {updateTrip, deleteTrip, fetchTrip}) (ReviewTrip);
+export default connect(mapStateToProps, {updateTrip, fetchTrip}) (ReviewTrip);
